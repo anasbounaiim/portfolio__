@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+ 
+/*  background-color: #008181;*/
+  /* background-image: url(assets/buuuu_bg.jpg); */
+  background-image: url(assets/logo_animated.gif);
+  background-color: #0a0a0a;
+  background-position-x: center;
+  background-size: 80px;
+  background-blend-mode: soft-light;
+  background-repeat: repeat;
+  background-position-y:40% ;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fcfcfc;
+}
