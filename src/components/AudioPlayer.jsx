@@ -141,17 +141,17 @@ const AudioPlayer = () => {
 
           {index === currentTrackIndex ? (
             <div>
-              <div className="flex justify-center bg-slate-200 overflow-hidden w-52 h-44 opacity-80 rounded-t-md">
+              <div className="flex justify-center bg-slate-200 overflow-hidden w-48 h-40 opacity-80 rounded-t-md">
                 <img
                   src={track.cover}
                   className="w-64  animate__fadeIn  animate__animated animate__faster"
                   alt=""
                 />
               </div>
-              <span className="absolute top-0 text-lg ml-2 mt-2 text-white font-bold drop-shadow-2xl">
+              <span className="absolute top-0 text-base ml-2 mt-2 text-white font-bold drop-shadow-2xl">
                 {track.title}
               </span>
-              <div className="absolute top-[9.4rem] text-ms ml-2 text-white font-bold drop-shadow-2xl">
+              <div className="absolute top-[8.4rem] text-base ml-2 text-white font-bold drop-shadow-2xl">
                 <span>{formatTime(currentTime)}</span> /{" "}
                 <span>{formatTime(duration)}</span>
               </div>

@@ -67,7 +67,7 @@ const handleDivClick = () => {
        {/* taskbar icons */}
 
        <div className="w-[1000px] cursor-pointer  ml-5">
-      <ul className="flex h-11  text-white text-base font-medium">
+      <ul className="flex h-9  text-white text-base font-medium">
       {homeIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn" ><img src={icon_home} className="w-5 h-5 mr-2" alt="" /> <span> Home</span></li>  }  
        {aboutIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_about} className="w-5 h-5 mr-2" alt="" />  About</li>}
        {portfolioIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_portfolio} className="w-5 h-5 mr-2" alt="" />  Portfolio</li>}

@@ -58,14 +58,14 @@ const Whether = () => {
     return () => clearTimeout(loadingTimeout); // Clean up the timeout if the component unmounts before loading completes
   }, []);
   return (
-    <div className="absolute top-[15.5rem] flex flex-col items-center right-1 w-52 h-52 bg-gradient-to-t from-sky-500 to-sky-500  mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight">
+    <div className="absolute top-[15rem] flex flex-col items-center right-1 w-48 h-48 bg-gradient-to-t from-sky-500 to-sky-500  mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight">
       
 
       {/* If weather is not undefined display results from API */}
       <div className="text-white w-[100%] h-[74%]">
       {typeof weather.main !== "undefined" ? (
       
-          <div className="my-2 mt-3 text-base font-semibold flex flex-col items-center animate__animated animate__fadeIn">
+          <div className="my-2 mt-3 text-sm font-semibold flex flex-col items-center animate__animated animate__fadeIn">
             <img className="w-12 h-12" src={weather_icon} alt="" />
 
             {/* Location */}
@@ -74,7 +74,7 @@ const Whether = () => {
             </p>
 
             {/* Temperature Celsius */}
-            <p className="text-xl">{weather.main.temp}°C</p>
+            <p className="text-lg">{weather.main.temp}°C</p>
 
             {/* Condition (Sunny) */}
             <p>{weather.weather[0].main}</p>
@@ -84,16 +84,16 @@ const Whether = () => {
       ) : (
         <div className="flex flex-col items-center justify-center w-[100%] h-[100%]">
           <img className="w-11 h-11" src={man} alt="" />
-          <h1 className="text-xl font-bold">Wheather App</h1>
-          <h1 className="text-base font-bold">Search for a city</h1>
+          <h1 className="text-lg font-bold">Wheather App</h1>
+          <h1 className="text-sm font-bold">Search for a city</h1>
         </div>
       )}
         </div>
 
       {/* Search Box - Input + Button  */}
-      <div className="flex flex-row justify-center mt-5">
+      <div className="flex flex-row justify-center mt-4">
         <input
-          className="text-black w-40 text-sm px-2 py-0 rounded-l-md capitalize"
+          className="text-black w-36 text-sm px-2 py-0 rounded-l-md capitalize"
           type="text"
           placeholder="Enter city/town..."
           onChange={(e) => setSearch(e.target.value)}
