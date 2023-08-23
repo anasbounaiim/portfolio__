@@ -56,17 +56,17 @@ const handleDivClick = () => {
 
   return (
     <>
-    <div className="z-[100] flex justify-between fixed bottom-0 left-0 w-full h-10 bg-blue-700 animate__animated animate__fadeInUp animate__faster">
+    <div className="z-[100] flex justify-between fixed bottom-0 left-0 w-full h-9 bg-blue-700 animate__animated animate__fadeInUp animate__faster">
       
 <div className="flex">
    {/* start bare */}
-      <div className="relative flex justify-center items-center float-left rounded-r-md w-40 h-10 bg-green-500 cursor-pointer" onClick={handleDivClick}>
+      <div className="relative flex justify-center items-center float-left rounded-r-md w-40 h-9 bg-green-500 cursor-pointer" onClick={handleDivClick}>
         <span className="text-white text-xl font-bold bg-green-500 select-none	flex justify-center items-center"><img src={icon} className="w-7 h-7 mr-2" alt="" /> Start</span>
       </div>
 
        {/* taskbar icons */}
 
-       <div className="w-[800px] cursor-pointer  ml-5">
+       <div className="w-[1000px] cursor-pointer  ml-5">
       <ul className="flex h-11  text-white text-base font-medium">
       {homeIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn" ><img src={icon_home} className="w-5 h-5 mr-2" alt="" /> <span> Home</span></li>  }  
        {aboutIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_about} className="w-5 h-5 mr-2" alt="" />  About</li>}
@@ -81,7 +81,7 @@ const handleDivClick = () => {
      
       
       {/* //timezone */}
-      <div className="float-right w-36 h-10 rounded-l-md bg-blue-500 text-white text-sm flex justify-center items-center">
+      <div className="float-right w-36 h-9 rounded-l-md bg-blue-500 text-white text-sm flex justify-center items-center">
         <p className="block text-center leading-none select-none 	bg-blue-500	">
           {currentHour} <br />
           {currentDate}
@@ -92,7 +92,7 @@ const handleDivClick = () => {
     </div>
       {/* //show div */}
       {showSecondDiv && (
-        <div  className="z-[2] drop-shadow-md rounded-tr-lg absolute bottom-[2.4rem] w-[25rem] h-[26rem] bg-gray-100 text-gray-500 animate__animated animate__fadeInUp animate__faster">
+        <div  className="z-[2] drop-shadow-md rounded-tr-lg absolute bottom-[2.2rem] w-[25rem] h-[26rem] bg-gray-100 text-gray-500 animate__animated animate__fadeInUp animate__faster">
           <p className="bg-blue-600	rounded-tr-lg flex justify-start items-center p-2 text-white">
             <img src="https://ui-avatars.com/api/?name=Anas+Bounaim&rounded=true&size=40&color=880808&background=FAA0A0" className="mr-2" alt="" />
             <span className="text-lg font-bold">Anas Bounaim</span>

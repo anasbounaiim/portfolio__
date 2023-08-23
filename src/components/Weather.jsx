@@ -58,14 +58,14 @@ const Whether = () => {
     return () => clearTimeout(loadingTimeout); // Clean up the timeout if the component unmounts before loading completes
   }, []);
   return (
-    <div className="absolute top-[17rem] flex flex-col items-center right-1 w-56 h-56 bg-gradient-to-t from-sky-500 to-sky-500  mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight">
+    <div className="absolute top-[15.5rem] flex flex-col items-center right-1 w-52 h-52 bg-gradient-to-t from-sky-500 to-sky-500  mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight">
       
 
       {/* If weather is not undefined display results from API */}
       <div className="text-white w-[100%] h-[74%]">
       {typeof weather.main !== "undefined" ? (
       
-          <div className="my-2 mt-3 text-lg font-semibold flex flex-col items-center animate__animated animate__fadeIn">
+          <div className="my-2 mt-3 text-base font-semibold flex flex-col items-center animate__animated animate__fadeIn">
             <img className="w-12 h-12" src={weather_icon} alt="" />
 
             {/* Location */}
@@ -83,9 +83,9 @@ const Whether = () => {
       
       ) : (
         <div className="flex flex-col items-center justify-center w-[100%] h-[100%]">
-          <img className="w-12 h-12" src={man} alt="" />
-          <h1 className="text-2xl font-bold">Wheather App</h1>
-          <h1 className="text-lg font-bold">Search for a city</h1>
+          <img className="w-11 h-11" src={man} alt="" />
+          <h1 className="text-xl font-bold">Wheather App</h1>
+          <h1 className="text-base font-bold">Search for a city</h1>
         </div>
       )}
         </div>

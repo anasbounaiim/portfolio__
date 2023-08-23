@@ -5,7 +5,7 @@ const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
   const [showPlaylist, setShowPlaylist] = useState(false);
 
   return (
-    <div className="flex flex-row absolute right-56 h-[17rem]">
+    <div className="flex flex-row absolute right-52 h-[17rem]">
       {/* Playlist */}
       {showPlaylist && (
         <div className=" w-52 h-[12rem] overflow-y-scroll rounded-md animate__animated  animate__fadeIn animate__faster">
@@ -33,9 +33,9 @@ const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
       <div>
         <div
           onClick={() => setShowPlaylist(!showPlaylist)}
-          className=" text-white opacity-60 w-7  flex items-center justify-center  cursor-pointer mt-[100px] absolute z-50"
+          className=" text-white opacity-60 w-7 h-7  flex items-center justify-center  cursor-pointer mt-[100px] absolute z-50"
         >
-          <img src={playlist_icon} className="w-10 h-10" alt="" />
+          <img src={playlist_icon} className="w-7 h-7" alt="" />
         </div>
       </div>
     </div>
