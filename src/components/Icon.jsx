@@ -12,7 +12,7 @@ const Icon = ({ bgColor, text ,handleClick  }) => {
         
         <div className={`z-[-10] m-6 flex flex-col items-center justify-center w-[100px] ${text==="Recycle bin" ?'absolute -right-3 w-20 bottom-8 ' : null  } animate__animated animate__fadeIn animate__faster cursor-pointer px-4 py-1 hover:animate__fadeInUp  hover:bg-zinc-900/60  hover:rounded-md hover:opacity-60`} onClick={handleClick} >
         
-            <div className={`w-[60px] h-[60px] ${bgColor} text-white text-2xl  rounded-md `}> 
+            <div className={`w-[55px] h-[55px] ${bgColor} text-white text-2xl  rounded-md `}> 
             
                   {/* Home content */}
           {text === "Home" ? <img src={icon_home} className="w-18 h-18" alt="" /> : null}
