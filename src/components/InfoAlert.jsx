@@ -9,7 +9,7 @@ const InfoAlert = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 119000); // Hide the alert after 10 seconds
+    }, 9000); // Hide the alert after 10 seconds
 
     return () => {
       clearTimeout(timer); // Clean up the timer when the component unmounts
