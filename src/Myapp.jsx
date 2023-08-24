@@ -7,6 +7,9 @@ import Icon from "./components/Icon";
 import AudioPlayer from "./components/AudioPlayer";
 import Whether from "./components/Weather";
 import RightClickMessage from "./components/RightClickMessage";
+import CirclesAnimation from './components/CirclesAnimation';
+import InfoAlert from './components/InfoAlert';
+
 
 import { isMobile, isTablet, isDesktop } from "react-device-detect";
 import mobile_page from "./assets/mobile_page.jpg";
@@ -100,12 +103,14 @@ const handleDivClick = (index) => {
 
   return (
     <div>
+      
       {isDesktop ? (
         <div>
           {isLoading ? (
             <LoadingPage />
           ) : (
             <>
+            <InfoAlert />
               <AudioPlayer />
               <Whether />
               <RightClickMessage></RightClickMessage>
@@ -222,6 +227,7 @@ const handleDivClick = (index) => {
                 binIcon={showOngletBin}
 
               />
+              <CirclesAnimation></CirclesAnimation>
             </>
           )}
         </div>
