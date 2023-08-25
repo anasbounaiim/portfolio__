@@ -37,7 +37,7 @@ const InfoAlert = () => {
               better experience
             </p>
             <button onClick={handleAlertClick} className="bg-gray-200 font-normal w-28 p-1 rounded-md border-gray-300 text-gray-500 hover:bg-gray-300 border-solid border-[1px]">
-              ok
+              OK
             </button>
           </div>
         </div>
