@@ -52,7 +52,7 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div className="animate__animated animate__fadeIn pb-6">
+        <div className="animate__animated animate__fadeIn  py-5">
           <div className="flex justify-center items-center ">
             {/* <img src={icon_home} className="w-12 h-12 mr-4" alt="" /> */}
             <h1 className="text-5xl text-center font-black px-8 py-5 font-serif"> What is this website ? Why i made this website ?</h1>
@@ -89,6 +89,8 @@ const Home = () => {
             power of creativity, collaboration, and the wonders that unfold when
             we dare to dream.
           </p>
+          <p className="float-right  mr-8 text-base font-serif pb-6 font-bold">-Anas le Homme</p>
+         
         </div>
       )}
     </>

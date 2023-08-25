@@ -26,8 +26,7 @@ const About = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center animate__animated animate__fadeIn">
-        <img src={icon_about} className="w-12 h-12 mr-4" alt="" /> 
+        <div className=" flex flex-col justify-center items-center animate__animated animate__fadeIn">
       <h1 className="text-5xl ">About</h1>
       </div>
       )}
