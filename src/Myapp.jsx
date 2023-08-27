@@ -48,27 +48,27 @@ const handleDivClick = (index) => {
   //
 
   const HomeTitle = (
-    <span className="flex">
+    <span className="flex items-center">
       <img src={icon_home} className="w-8 h-8 mr-3" alt="" /> Home
     </span>
   );
   const AboutTitle = (
-    <span className="flex">
+    <span className="flex items-center">
       <img src={icon_about} className="w-8 h-8 mr-3" alt="" /> About
     </span>
   );
   const PortfolioTitle = (
-    <span className="flex">
+    <span className="flex items-center">
       <img src={icon_portfolio} className="w-8 h-8 mr-3" alt="" /> Portfolio
     </span>
   );
   const ContactTitle = (
-    <span className="flex">
+    <span className="flex items-center">
       <img src={icon_contact} className="w-8 h-8 mr-3" alt="" /> Contact
     </span>
   );
   const BinTitle = (
-    <span className="flex">
+    <span className="flex items-center">
       <img src={icon_bin} className="w-8 h-8 mr-3" alt="" /> Bin
     </span>
   );
@@ -153,7 +153,7 @@ const handleDivClick = (index) => {
                   title={HomeTitle}
                   content="home"
                   handleClick={handleClickHome}
-                  size="w-[650px] h-[500px]"
+                  size="w-[680px] h-[530px]"
                   id={divs[0].id}
                   initialX={divs[0].x}
                   initialY={divs[0].y}
@@ -181,7 +181,7 @@ const handleDivClick = (index) => {
                   title={PortfolioTitle}
                   content="portfolio"
                   handleClick={handleClickPortfolio}
-                  size="w-[600px] h-[500px]"
+                  size="w-[700px] h-[590px]"
                   id={divs[2].id}
                   initialX={divs[2].x}
                   initialY={divs[2].y}
@@ -195,7 +195,7 @@ const handleDivClick = (index) => {
                   title={ContactTitle}
                   content="contact"
                   handleClick={handleClickContact}
-                  size="w-[600px] h-[510px]"
+                  size="w-[600px] h-[570px]"
                   id={divs[3].id}
                   initialX={divs[3].x}
                   initialY={divs[3].y}

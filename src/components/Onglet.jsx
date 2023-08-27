@@ -41,16 +41,19 @@ const Onglet = ({
   const handleMouseUp = () => {
     setIsMouseDown(false);
   };
+
+  
+
   return (
     <>
       <div
-        className={`absolute z-[${styles}] ${size} bg-gray-100  rounded-lg overflow-hidden drop-shadow-md animate__animated animate__fadeInUp animate__faster`}
+        className={`absolute z-[${styles}] ${size} bg-gray-100 h-10  rounded-lg overflow-hidden drop-shadow-md animate__animated animate__fadeInUp animate__faster`}
         style={{ left: position.left + "px", top: position.top + "px" }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
-        <div className="w-full h-10 bg-blue-600 select-none cursor-move flex justify-between items-center text-white text-xl font-medium">
+        <div className="w-full  bg-blue-600 select-none cursor-move py-1 flex justify-between items-center text-white text-xl font-medium">
           <span className="ml-4">{title}</span>
           <span
             className="mr-4 cursor-pointer rounded-md py-1 px-1 bg-red-500 hover:bg-red-600"
@@ -59,28 +62,35 @@ const Onglet = ({
             <MdOutlineClose className="font-bold" />
           </span>
         </div>
+        <div className="h-12 w-full fixed top-[2.5rem] bg-gray-300 flex justify-around items-center z-50">
+          <p className="text-base  ml-2 font-semibold"> Address :</p>
+          <p className="bg-gray-200 w-[80%] h-10 px-5 text-lg mr-7 font-semibold rounded-full text-gray-700 flex items-center">www.anasbounaim.com<span className="text-gray-500">/{content}</span></p>
+          
+        </div>
+       
         <div className="w-full h-full overflow-scroll scroll-smooth ">
+        
           {/* Home content */}
           {content === "home" ? (
-            <div>
+            <div className="my-7">
               <Home />
             </div>
           ) : null}
           {/* about content */}
           {content === "about" ? (
-            <div>
+            <div className="my-11" >
               <About />
             </div>
           ) : null}
           {/* portfolio content */}
           {content === "portfolio" ? (
-            <div>
+            <div className="my-11">
               <Porfolio />
             </div>
           ) : null}
           {/* conatct content */}
           {content === "contact" ? (
-            <div>
+            <div className="my-11">
               <Contact />
             </div>
           ) : null}
