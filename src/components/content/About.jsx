@@ -3,6 +3,8 @@ import icon_about from "../../assets/web_tec.jpg";
 import icon_about1 from "../../assets/web_tec1.jpg";
 import icon_about2 from "../../assets/web_tec3.jpg";
 
+import "animate.css";
+
 const About = () => {
   const [isLoadingContent, setIsLoadingContent] = useState(true);
 
@@ -30,7 +32,7 @@ const About = () => {
       ) : (
         <div className=" flex flex-col animate__animated animate__fadeIn font-medium">
           
-          <div className="w-full shadow-sm h-12 px-4 py-6 flex flex-row items-center fixed bg-gray-100">
+          <div className="w-full shadow-sm h-12 px-4 py-6 flex flex-row items-center fixed bg-gray-100 animate__animated animate__fadeInDown">
             <div className="rounded-full w-8 h-8 mr-1 bg-green-400">
               {" "}
               <img
@@ -44,9 +46,9 @@ const About = () => {
 
 
           <div className="mt-12">
-          <p className="flex justify-center my-2 font-normal text-gray-400">- Day in life -</p>
+          <p className="flex justify-center my-2 font-normal text-gray-400 animate__animated animate__fadeIn">- Day in life -</p>
           {/* HIM */}
-          <div className="my-3 ml-4 flex flex-row items-end text-white ">
+          <div className="my-3 ml-4 flex flex-row items-end text-white animate__animated animate__slideInLeft animate__delay-1s ">
             <div className="rounded-full w-10 h-10 mr-1 bg-green-400">
               {" "}
               <img
@@ -60,7 +62,7 @@ const About = () => {
             </span>
           </div>
           {/* ME */}
-          <div className=" my-3 flex flex-row items-end ml-[17.6rem]  ">
+          <div className=" my-3 flex flex-row items-end ml-[17.6rem]  animate__animated animate__slideInRight animate__delay-1s ">
             <span className="bg-gray-200 rounded-t-lg rounded-bl-lg p-2 w-80">
               Hey, it's BOUNAIM Anas "The enigmatic dev" who unleashes boundless
               creativity to bring ideas to life screens both big & small ONE
@@ -77,7 +79,7 @@ const About = () => {
             </div>
           </div>
            {/* HIM */}
-           <div className="my-3 ml-4 flex flex-row items-end text-white ">
+           <div className="my-3 ml-4 flex flex-row items-end text-white animate__animated animate__slideInLeft animate__delay-1s ">
             <div className="rounded-full w-10 h-10 mr-1 bg-green-400">
               {" "}
               <img
@@ -91,7 +93,7 @@ const About = () => {
             </span>
           </div>
           {/* ME */}
-          <div className=" my-3 flex flex-row items-end ml-[17.7rem]  ">
+          <div className=" my-3 flex flex-row items-end ml-[17.7rem]  animate__animated animate__slideInRight animate__delay-1s ">
             <div className="flex flex-col space-y-3">
             <span className="bg-gray-200 rounded-t-lg rounded-bl-lg p-2 w-80">
             In my toolkit, I rely on React.js for building dynamic user interfaces and Tailwind CSS for efficient styling. With these, I create engaging web front-ends. PHP and Java are my trusted choices for server-side logic, ensuring robust and responsive web applications.
@@ -111,7 +113,7 @@ const About = () => {
             </div>
           </div>
            {/* HIM */}
-           <div className="my-3 ml-4 flex flex-row items-end text-white ">
+           <div className="my-3 ml-4 flex flex-row items-end text-white animate__animated animate__slideInLeft animate__delay-1s ">
             <div className="rounded-full w-10 h-10 mr-1 bg-green-400">
               {" "}
               <img
@@ -125,7 +127,7 @@ const About = () => {
             </span>
           </div>
             {/* ME */}
-            <div className=" my-3 flex flex-row items-end ml-[21.8rem]  ">
+            <div className=" my-3 flex flex-row items-end ml-[21.8rem]  animate__animated animate__slideInRight animate__delay-1s ">
             <div className="flex flex-col ">
               <img className="bg-gray-300 rounded-t-lg rounded-bl-lg p-1 my-1 w-64" src={icon_about} alt="" />
               <img className="bg-gray-300 rounded-t-lg rounded-bl-lg p-1 my-1 w-64" src={icon_about1} alt="" />
@@ -143,7 +145,7 @@ const About = () => {
           </div>
 
            {/* HIM */}
-           <div className="my-3 ml-4 flex flex-row items-end text-white ">
+           <div className="my-3 ml-4 flex flex-row items-end text-white animate__animated animate__slideInLeft animate__delay-1s ">
             <div className="rounded-full w-10 h-10 mr-1 bg-green-400">
               {" "}
               <img
