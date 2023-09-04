@@ -32,7 +32,7 @@ const About = () => {
       ) : (
         <div className=" flex flex-col animate__animated animate__fadeIn font-medium">
           
-          <div className="w-full shadow-sm h-12 px-4 py-6 flex flex-row items-center fixed bg-gray-100 animate__animated animate__fadeInDown">
+          <div className="w-full shadow-[0_0px_19px_1px_rgba(0,0,0,0.1)] h-12 px-4 py-6 flex flex-row items-center fixed bg-gray-100 animate__animated animate__fadeInDown z-40">
             <div className="rounded-full w-8 h-8 mr-1 bg-green-400">
               {" "}
               <img
