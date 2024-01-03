@@ -64,7 +64,7 @@ const Onglet = ({
         </div>
         <div className="h-12 w-full fixed top-[2.5rem] bg-gray-300 flex justify-around items-center z-50">
           <p className="text-base  ml-2 font-semibold"> Address :</p>
-          <p className="bg-gray-200 w-[80%] h-10 px-5 text-lg mr-7 font-semibold rounded-full text-gray-700 flex items-center">www.anasbounaim.com<span className="text-gray-500">/{content}</span></p>
+          <p className="bg-gray-200 w-[80%] h-10 px-5 text-lg mr-7 font-semibold rounded-full text-gray-700 flex items-center">B:\Users\PC\Documents\<span className="text-gray-500 capitalize ml-[1px]">{content}.<span className="lowercase">html</span> </span></p>
           
         </div>
        

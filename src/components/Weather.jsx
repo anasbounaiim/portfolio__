@@ -57,6 +57,7 @@ const Whether = () => {
 
     return () => clearTimeout(loadingTimeout); // Clean up the timeout if the component unmounts before loading completes
   }, []);
+  
   return (
     <div className="absolute top-[15rem] flex flex-col items-center right-1 w-48 h-48 bg-gradient-to-t from-sky-500 to-sky-500  mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight">
       

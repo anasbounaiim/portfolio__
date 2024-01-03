@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'guminert': ['Guminert', 'sans-serif'],
+        'SFPROD': ['SFPROD', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

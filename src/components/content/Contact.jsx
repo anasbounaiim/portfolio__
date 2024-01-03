@@ -96,8 +96,8 @@ const Contact = () => {
           </div>
         </div>
       ) : (
-        <div className="animate__animated animate__fadeIn">
-          <div className="flex justify-center items-center mt-1">
+        <div className="animate__animated animate__fadeIn mt-[3.4rem]">
+          <div className="flex justify-center items-center ">
             <img src={icon_contact} className="w-12 h-12 mr-4" alt="" />
             <h1 className="text-5xl "> Contact</h1>
           </div>
@@ -178,6 +178,14 @@ const Contact = () => {
         className="p-2 bg-red-500 hover:bg-red-600 cursor-pointer text-white rounded-md font-semibold text-lg w-80"/>
 
       </form>
+          </div>
+          <div>
+            <p className="flex justify-center items-center font-serif italic font-extralight">You can also find me on the following social networks</p>
+            <ul className="flex justify-center items-center gap-8 font text-white ">
+              <li className="bg-gradient-to-r from-blue-500 to-blue-600 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center  my-3 rounded-full">Linkedin</li>
+              <li className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center  my-3 rounded-full">Intagram</li>
+              <li className="bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800 h-7 w-28  hover:animate-pulse cursor-pointer text-center flex justify-center items-center my-3 rounded-full">Github</li>
+            </ul>
           </div>
         </div>
       )}
