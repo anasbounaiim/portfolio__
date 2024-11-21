@@ -4,6 +4,7 @@ import icon_home from "../assets/home-icon.png"
 import icon_about from "../assets/about-icon.png"
 import icon_portfolio from "../assets/portfolio-icon.png"
 import icon_contact from "../assets/contact-icon.png"
+import icon_xogame from "../assets/icon_xogame.png"
 import icon_bin from "../assets/bin.png";
 
 const Icon = ({ bgColor, text ,handleClick  }) => {
@@ -22,6 +23,8 @@ const Icon = ({ bgColor, text ,handleClick  }) => {
           {text === "Portfolio" ? <img src={icon_portfolio} className="w-18 h-18" alt="" /> : null}
           {/* conatct content */}
           {text === "Say hi !" ? <img src={icon_contact} className="w-18 h-18" alt="" /> : null}
+
+          {text === "XOgame" ? <img src={icon_xogame} className="w-18 h-18" alt="" /> : null}
 
           {text === "Recycle bin" ? <img src={icon_bin} className="w-18 h-18" alt="" /> : null}
             

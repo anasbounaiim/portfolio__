@@ -11,6 +11,7 @@ import CirclesAnimation from './components/CirclesAnimation';
 import InfoAlert from './components/InfoAlert';
 
 
+
 import { isMobile, isTablet, isDesktop } from "react-device-detect";
 import mobile_page from "./assets/mobile_page.jpg";
 
@@ -18,6 +19,7 @@ import icon_home from "./assets/home-icon.png";
 import icon_about from "./assets/about-icon.png";
 import icon_portfolio from "./assets/portfolio-icon.png";
 import icon_contact from "./assets/contact-icon.png";
+import icon_xogame from "./assets/icon_xogame.png";
 import icon_bin from "./assets/bin.png";
 
 function Myapp() {
@@ -26,6 +28,7 @@ function Myapp() {
   const [showOngletAbout, setShowOngletAbout] = useState(false);
   const [showOngletPortfolio, setShowOngletPortfolio] = useState(false);
   const [showOngletContact, setShowOngletContact] = useState(false);
+  const [showOngletXOgame, setShowOngletXOgame] = useState(false);
   const [showOngletBin, setShowOngletBin] = useState(false);
 
   const [divs, setDivs] = useState([
@@ -67,6 +70,11 @@ const handleDivClick = (index) => {
       <img src={icon_contact} className="w-8 h-8 mr-3" alt="" /> Contact
     </span>
   );
+  const XOgameTitle = (
+    <span className="flex items-center">
+      <img src={icon_xogame} className="w-8 h-8 mr-3" alt="" /> XOgame
+    </span>
+  );
   const BinTitle = (
     <span className="flex items-center">
       <img src={icon_bin} className="w-8 h-8 mr-3" alt="" /> Bin
@@ -96,6 +104,9 @@ const handleDivClick = (index) => {
 
   const handleClickContact = () => {
     setShowOngletContact(!showOngletContact);
+  };
+  const handleClickXOgame = () => {
+    setShowOngletXOgame(!showOngletXOgame);
   };
   const handleClickBin = () => {
     setShowOngletBin(!showOngletBin);
@@ -139,6 +150,12 @@ const handleDivClick = (index) => {
                 text="Say hi !"
                 handleClick={handleClickContact}
                 showOnglet={showOngletContact}
+              />
+              <Icon
+                bgColor=""
+                text="XOgame"
+                handleClick={handleClickXOgame}
+                showOnglet={showOngletXOgame}
               />
               <Icon
                 bgColor=""
@@ -203,6 +220,19 @@ const handleDivClick = (index) => {
                   onClick={() => handleDivClick(3)}
                 />
               )}
+                 {showOngletXOgame && (
+                <Onglet
+                  title={XOgameTitle}
+                  content="xogame"
+                  handleClick={handleClickXOgame}
+                  size="w-[680px] h-[600px]"
+                  id={divs[0].id}
+                  initialX={divs[0].x}
+                  initialY={divs[0].y}
+                  styles={zIndices[0]}
+                  onClick={() => handleDivClick(4)}
+                />
+              )}
               {showOngletBin && (
                 <Onglet
                   title={BinTitle}
@@ -220,10 +250,12 @@ const handleDivClick = (index) => {
                 handleClickPortfolio={handleClickPortfolio}
                 handleClickAbout={handleClickAbout}
                 handleClickContact={handleClickContact}
+                handleClickXOgame={handleClickXOgame}
                 homeIcon={showOngletHome}
                 aboutIcon={showOngletAbout}
                 portfolioIcon={showOngletPortfolio}
                 contactIcon={showOngletContact}
+                XOgameIcon={showOngletXOgame}
                 binIcon={showOngletBin}
 
               />

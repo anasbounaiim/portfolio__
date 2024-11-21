@@ -5,6 +5,7 @@ import Home from "./content/Home";
 import About from "./content/About";
 import Porfolio from "./content/Portfolio";
 import Contact from "./content/Contact";
+import XOGame from "./content/XOGame";
 
 import "animate.css";
 
@@ -68,7 +69,7 @@ const Onglet = ({
           
         </div>
        
-        <div className="w-full h-full overflow-scroll scroll-smooth ">
+        <div className="w-full h-full bg-white overflow-scroll scroll-smooth ">
         
           {/* Home content */}
           {content === "home" ? (
@@ -92,6 +93,12 @@ const Onglet = ({
           {content === "contact" ? (
             <div className="my-11">
               <Contact />
+            </div>
+          ) : null}
+           {/* Home content */}
+           {content === "xogame" ? (
+            <div className="my-7 bg-white">
+              <XOGame />
             </div>
           ) : null}
           {content === "bin" ? (
