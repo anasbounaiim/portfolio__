@@ -5,6 +5,7 @@ import "animate.css";
 import XOGame from "./XOGame";
 import Snake from "./Snake";
 import RockPaperScissors from "./RockPaperScissors";
+import ShuffleCards from "./ShuffleCards";
 
 const Games = () => {
   const [selectedGame, setSelectedGame] = useState(null);
@@ -20,9 +21,10 @@ const Games = () => {
   }, []);
 
   const gamesList = [
-    { id: 1, name: "Tic-Tac-Toe", component: <XOGame />, color: "bg-red" },
-    { id: 2, name: "Snake", component: <Snake />, color: "bg-green" },
-    { id: 3, name: "Rock Paper Scissors", component: <RockPaperScissors />, color: "bg-blue" },
+    { id: 1, name: "Tic-Tac-Toe", component: <XOGame />, color: "bg-red-500" },
+    { id: 2, name: "Snake", component: <Snake />, color: "bg-green-500" },
+    { id: 3, name: "Rock Paper Scissors", component: <RockPaperScissors />, color: "bg-blue-500" },
+    { id: 4, name: "Memory Card Game", component: <ShuffleCards />, color: "bg-pink-500" },
   ];
 
   const selectGame = (game) => {
@@ -65,7 +67,7 @@ const Games = () => {
                 {gamesList.map((game) => (
                   <div
                     key={game.id}
-                    className={`cursor-pointer ${game.color}-500 text-white flex justify-center items-center h-40 w-40 rounded-lg shadow-lg text-center hover:animate__animated hover:animate__bounce`}
+                    className={`cursor-pointer ${game.color} text-white flex justify-center items-center h-40 w-40 rounded-lg shadow-lg text-center hover:animate__animated hover:animate__bounce`}
                     onClick={() => selectGame(game)}
                   >
                     <h2 className="text-xl font-bold">{game.name}</h2>

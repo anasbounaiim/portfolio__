@@ -61,7 +61,7 @@ const RockPaperScissors = () => {
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Rock Paper Scissors</h1>
 
       <div className="flex items-center justify-between w-80 mb-8">
-        <div className="text-center">
+        <div className="flex flex-col text-center">
           {playerChoice ? (
             choices.find((choice) => choice.id === playerChoice).icon
           ) : (
@@ -69,7 +69,7 @@ const RockPaperScissors = () => {
           )}
           <p className="mt-2 text-xl font-medium text-gray-800">You</p>
         </div>
-        <div className="text-center">
+        <div className="flex flex-col justify-center items-center text-center">
           {computerChoice ? (
             choices.find((choice) => choice.id === computerChoice).icon
           ) : (
@@ -90,7 +90,7 @@ const RockPaperScissors = () => {
         {choices.map((choice) => (
           <button
             key={choice.id}
-            className="flex flex-col items-center hover:text-gray-800 focus:outline-none"
+            className="flex flex-col items-center justify-center hover:text-gray-800 focus:outline-none"
             onClick={() => handlePlayerChoice(choice.id)}
           >
             {choice.icon}
