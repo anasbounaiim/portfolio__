@@ -125,12 +125,9 @@ const SnakeGame = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white">
-      <h1 className="text-4xl font-bold text-black mb-4">Snake Game</h1>
+    <div className="flex flex-col items-center justify-center bg-white ">
+      <h1 className="text-5xl font-bold text-black mb-4">Snake Game</h1>
       <h2 className="text-2xl text-gray-700 mb-4">Score: {score}</h2>
-      {!isGameStarted && !gameOver && (
-        <p className="text-gray-500 mb-4">Press an arrow key to start the game</p>
-      )}
       <div
         className="relative grid"
         style={{
@@ -153,6 +150,15 @@ const SnakeGame = () => {
               }`}
             />
           ))
+        )}
+
+        {/* Show Start Message */}
+        {!isGameStarted && !gameOver && (
+          <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75">
+            <p className="text-gray-500 text-lg font-bold">
+              Press an arrow key to start the game
+            </p>
+          </div>
         )}
 
         {/* Game Over Overlay */}

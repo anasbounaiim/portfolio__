@@ -1,14 +1,28 @@
-import React, { useState } from "react";
-import XOGame from "./XOGame"; // Import XOGame component
-import Snake from "./Snake"; // Import XOGame component
+import React, { useState, useEffect } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import "animate.css";
+
+import XOGame from "./XOGame";
+import Snake from "./Snake";
+import RockPaperScissors from "./RockPaperScissors";
 
 const Games = () => {
   const [selectedGame, setSelectedGame] = useState(null);
+  const [isLoadingContent, setIsLoadingContent] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading by setting isLoadingContent to false after a delay
+    const loadingTimeout = setTimeout(() => {
+      setIsLoadingContent(false);
+    }, 1000); // Adjust the delay as needed
+
+    return () => clearTimeout(loadingTimeout);
+  }, []);
 
   const gamesList = [
-    { id: 1, name: "Tic-Tac-Toe", component: <XOGame /> , color: "bg-red"},
-    { id: 2, name: "Snake", component: <Snake /> , color: "bg-green"},
-    // Add more games here as needed
+    { id: 1, name: "Tic-Tac-Toe", component: <XOGame />, color: "bg-red" },
+    { id: 2, name: "Snake", component: <Snake />, color: "bg-green" },
+    { id: 3, name: "Rock Paper Scissors", component: <RockPaperScissors />, color: "bg-blue" },
   ];
 
   const selectGame = (game) => {
@@ -20,35 +34,49 @@ const Games = () => {
   };
 
   return (
-    <div className="bg-white text-black flex flex-col items-center justify-center">
-      {selectedGame ? (
-        <div className="w-full ">
-          <button
-            onClick={backToLibrary}
-            className="px-4 py-2 mt-9 ml-4 flex items-start bg-blue-500 rounded-md text-white font-bold">
-            {"<==="}
-          </button>
-          {selectedGame.component}
-        
+    <>
+      {isLoadingContent ? (
+        <div className="flex items-center justify-center h-[600px]">
+          <div
+            className="inline-block h-14 w-14 animate-spin rounded-full border-[6px] border-solid border-blue-600 border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status"
+          >
+            <span className="absolute bg-blue-600 -m-px h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 clip-[rect(0,0,0,0)]">
+              Loading...
+            </span>
+          </div>
         </div>
       ) : (
-        <>
-          <h1 className="text-4xl font-bold mb-6 mt-16">Games Library</h1>
-          <div className="grid grid-cols-2 gap-6">
-            {gamesList.map((game) => (
-              <div
-                key={game.id}
-                className={`cursor-pointer ${game.color}-500 text-white flex justify-center items-center h-14 w-60  rounded-md shadow-lg text-center hover:${game.color}-600`}
-                onClick={() => selectGame(game)}
+        <div className="bg-white text-black flex flex-col items-center justify-center ">
+          {selectedGame ? (
+            <div className="w-full">
+              <button
+                onClick={backToLibrary}
+                className="text-5xl mt-7 ml-4 flex items-start text-black rounded-md font-bold"
               >
-                <h2 className="text-2xl font-semibold">{game.name}</h2>
+                <IoMdArrowRoundBack />
+              </button>
+              {selectedGame.component}
+            </div>
+          ) : (
+            <>
+              <h1 className="text-4xl font-bold mb-6 mt-16">Games Library</h1>
+              <div className="grid grid-cols-2 gap-6">
+                {gamesList.map((game) => (
+                  <div
+                    key={game.id}
+                    className={`cursor-pointer ${game.color}-500 text-white flex justify-center items-center h-40 w-40 rounded-lg shadow-lg text-center hover:animate__animated hover:animate__bounce`}
+                    onClick={() => selectGame(game)}
+                  >
+                    <h2 className="text-xl font-bold">{game.name}</h2>
+                  </div>
+                ))}
               </div>
-              
-            ))}
-          </div>
-        </>
+            </>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
