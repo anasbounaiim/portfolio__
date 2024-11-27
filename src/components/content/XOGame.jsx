@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiRefreshCw } from "react-icons/fi";
 
 const XOGame = () => {
   const [board, setBoard] = useState(Array(9).fill(null)); // 3x3 grid
@@ -161,9 +162,8 @@ const XOGame = () => {
       {/* Restart Button */}
       <button
         onClick={resetGame}
-        className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg rounded-md"
-      >
-        Restart Game
+        className="mt-7 text-gray-800 hover:text-gray-600"
+      ><FiRefreshCw  size={45} stroke="black" strokeWidth={3}/>
       </button>
     </div>
   );

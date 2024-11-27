@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegHandRock, FaRegHandPaper, FaRegHandScissors } from "react-icons/fa";
+import { FiRefreshCw } from "react-icons/fi";
 
 const RockPaperScissors = () => {
   const [playerChoice, setPlayerChoice] = useState(null);
@@ -101,21 +102,20 @@ const RockPaperScissors = () => {
 
       <div className="flex justify-center mt-8 space-x-4">
         <div className="bg-red-500 text-white px-4 py-2 text-lg rounded-md">
-          Player Score: {playerScore}
+          You : {playerScore}
         </div>
         <div className="bg-gray-500 text-white px-4 py-2 text-lg rounded-md">
           Ties: {ties}
         </div>
         <div className="bg-green-500 text-white px-4 py-2 text-lg rounded-md">
-          Computer Score: {computerScore}
+          Computer : {computerScore}
         </div>
       </div>
 
       <button
         onClick={resetGame}
-        className="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg rounded-md"
-      >
-        Restart Game
+        className="mt-8 text-gray-800 hover:text-gray-600"
+      ><FiRefreshCw size={45} stroke="black" strokeWidth={3}/>
       </button>
     </div>
   );

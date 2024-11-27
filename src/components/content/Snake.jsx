@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FiRefreshCw } from "react-icons/fi";
 
 const SnakeGame = () => {
   const [snake, setSnake] = useState([[5, 5]]); // Initial snake position
@@ -164,12 +165,11 @@ const SnakeGame = () => {
         {/* Game Over Overlay */}
         {gameOver && (
           <div className="absolute inset-0 bg-white bg-opacity-75 flex flex-col items-center justify-center">
-            <h2 className="text-2xl text-red-600 font-bold mb-4">Game Over!</h2>
+            <h2 className="text-3xl text-black font-bold mb-4">Game Over!</h2>
             <button
               onClick={restartGame}
-              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500"
-            >
-              Restart Game
+              className="text-gray-800 hover:text-gray-600"
+            > <FiRefreshCw  size={40} stroke="black" strokeWidth={3}/>
             </button>
           </div>
         )}
