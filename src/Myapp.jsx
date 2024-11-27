@@ -19,7 +19,7 @@ import icon_home from "./assets/home-icon.png";
 import icon_about from "./assets/about-icon.png";
 import icon_portfolio from "./assets/portfolio-icon.png";
 import icon_contact from "./assets/contact-icon.png";
-import icon_xogame from "./assets/icon_xogame.png";
+import icon_games from "./assets/icon_games.png";
 import icon_bin from "./assets/bin.png";
 
 function Myapp() {
@@ -28,7 +28,7 @@ function Myapp() {
   const [showOngletAbout, setShowOngletAbout] = useState(false);
   const [showOngletPortfolio, setShowOngletPortfolio] = useState(false);
   const [showOngletContact, setShowOngletContact] = useState(false);
-  const [showOngletXOgame, setShowOngletXOgame] = useState(false);
+  const [showOngletGames, setShowOngletGames] = useState(false);
   const [showOngletBin, setShowOngletBin] = useState(false);
 
   const [divs, setDivs] = useState([
@@ -70,9 +70,9 @@ const handleDivClick = (index) => {
       <img src={icon_contact} className="w-8 h-8 mr-3" alt="" /> Contact
     </span>
   );
-  const XOgameTitle = (
+  const gamesTitle = (
     <span className="flex items-center">
-      <img src={icon_xogame} className="w-8 h-8 mr-3" alt="" /> XOgame
+      <img src={icon_games} className="w-8 h-8 mr-3" alt="" /> games
     </span>
   );
   const BinTitle = (
@@ -105,8 +105,8 @@ const handleDivClick = (index) => {
   const handleClickContact = () => {
     setShowOngletContact(!showOngletContact);
   };
-  const handleClickXOgame = () => {
-    setShowOngletXOgame(!showOngletXOgame);
+  const handleClickGames = () => { 
+    setShowOngletGames(!showOngletGames);
   };
   const handleClickBin = () => {
     setShowOngletBin(!showOngletBin);
@@ -153,9 +153,9 @@ const handleDivClick = (index) => {
               />
               <Icon
                 bgColor=""
-                text="XOgame"
-                handleClick={handleClickXOgame}
-                showOnglet={showOngletXOgame}
+                text="games"
+                handleClick={handleClickGames}
+                showOnglet={showOngletGames}
               />
               <Icon
                 bgColor=""
@@ -163,8 +163,6 @@ const handleDivClick = (index) => {
                 handleClick={handleClickBin}
                 showOnglet={showOngletBin}
               />
-              
-
               {showOngletHome && (
                 <Onglet
                   title={HomeTitle}
@@ -220,12 +218,12 @@ const handleDivClick = (index) => {
                   onClick={() => handleDivClick(3)}
                 />
               )}
-                 {showOngletXOgame && (
+                 {showOngletGames && (
                 <Onglet
-                  title={XOgameTitle}
-                  content="xogame"
-                  handleClick={handleClickXOgame}
-                  size="w-[680px] h-[600px]"
+                  title={gamesTitle}
+                  content="games"
+                  handleClick={handleClickGames}
+                  size="w-[700px] h-[700px]"
                   id={divs[0].id}
                   initialX={divs[0].x}
                   initialY={divs[0].y}
@@ -243,19 +241,18 @@ const handleDivClick = (index) => {
                   initialY={100}
                 />
               )}
-    
 
               <Taskbar
                 handleClickHome={handleClickHome}
                 handleClickPortfolio={handleClickPortfolio}
                 handleClickAbout={handleClickAbout}
                 handleClickContact={handleClickContact}
-                handleClickXOgame={handleClickXOgame}
+                handleClickGames={handleClickGames}
                 homeIcon={showOngletHome}
                 aboutIcon={showOngletAbout}
                 portfolioIcon={showOngletPortfolio}
                 contactIcon={showOngletContact}
-                XOgameIcon={showOngletXOgame}
+                gamesIcon={showOngletGames}
                 binIcon={showOngletBin}
 
               />

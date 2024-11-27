@@ -6,20 +6,15 @@ import icon_about from "../assets/about-icon.png"
 import icon_portfolio from "../assets/portfolio-icon.png"
 import icon_contact from "../assets/contact-icon.png"
 import icon_bin from "../assets/bin.png"
-import icon_xogame from "../assets/icon_xogame.png"
+import icon_games from "../assets/icon_games.png"
 
 
 
-const Taskbar = ({handleClickHome ,handleClickAbout,handleClickPortfolio,handleClickContact ,handleClickXOgame,XOgameIcon, homeIcon , aboutIcon , portfolioIcon , contactIcon,binIcon}) => {
+const Taskbar = ({handleClickHome ,handleClickAbout,handleClickPortfolio,handleClickContact ,handleClickGames, gamesIcon, homeIcon , aboutIcon , portfolioIcon , contactIcon,binIcon}) => {
   const [currentHour, setCurrentHour] = useState("");
   const [currentDate, setCurrentDate] = useState("");
 
-
-
-
-
   const [showSecondDiv, setShowSecondDiv] = useState(false);
-
 
   // Function to get the formatted time (HH:mm)
   function getFormattedTime() {
@@ -65,23 +60,24 @@ const handleDivClick = () => {
         <span className="text-white text-xl font-bold bg-green-500 select-none	flex justify-center items-center"><img src={icon} className="w-7 h-7 mr-2" alt="" /> Start</span>
       </div>
 
-       {/* taskbar icons */}
+       {/* taskbar icons */
+       
+       console.log("gameIcon in Taskbar:", gamesIcon)
+}
 
        <div className="w-[1000px] cursor-pointer  ml-5">
+
       <ul className="flex h-9  text-white text-base font-medium">
       {homeIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn" ><img src={icon_home} className="w-5 h-5 mr-2" alt="" /> <span> Home</span></li>  }  
        {aboutIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_about} className="w-5 h-5 mr-2" alt="" />  About</li>}
        {portfolioIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_portfolio} className="w-5 h-5 mr-2" alt="" />  Portfolio</li>}
         {contactIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_contact} className="w-5 h-5 mr-2" alt="" />  Contact me</li>}
-        {XOgameIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_xogame} className="w-5 h-5 mr-2" alt="" />  XOgame</li>}
-        {binIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_bin} className="w-5 h-5 mr-2" alt="" />Recycle  bin </li>}
+        {gamesIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_games} className="w-5 h-5 mr-2" alt="" />  Games</li>}
+        {binIcon && <li className=" flex items-center justify-center shadow-inner bg-blue-600 w-[200px] rounded mr-1 hover:bg-blue-500 animate__animated animate__fadeIn"><img src={icon_bin} className="w-5 h-5 mr-2" alt="" />  Recycle  bin </li>}
          </ul>
     </div>
-
 </div>
-     
-     
-      
+    
       {/* //timezone */}
       <div className="float-right w-36 h-9 rounded-l-md bg-blue-500 text-white text-sm flex justify-center items-center">
         <p className="block text-center leading-none select-none 	bg-blue-500	">
@@ -104,7 +100,7 @@ const handleDivClick = () => {
             <li className="text-lg p-4 font-medium border-b-2 border-gray-200" onClick={handleClickAbout}><a href="#test"><span className="flex"><img src={icon_about} className="w-7 h-7 mr-4" alt="" />  About</span></a></li>
             <li className="text-lg p-4 font-medium border-b-2 border-gray-200" onClick={handleClickPortfolio}><a href="#test"><span className="flex"><img src={icon_portfolio} className="w-7 h-7 mr-4" alt="" />  Portfolio</span></a></li>
             <li className="text-lg p-4 font-medium border-b-2 border-gray-200" onClick={handleClickContact}><a href="#test"><span className="flex"><img src={icon_contact} className="w-7 h-7 mr-4" alt="" />  Contact me</span></a></li>
-            <li className="text-lg p-4 font-medium border-b-2 border-gray-200" onClick={handleClickXOgame}><a href="#test"><span className="flex"><img src={icon_xogame} className="w-7 h-7 mr-4" alt="" />  XOgame</span></a></li>
+            <li className="text-lg p-4 font-medium border-b-2 border-gray-200" onClick={handleClickGames}><a href="#test"><span className="flex"><img src={icon_games} className="w-7 h-7 mr-4" alt="" />  Games</span></a></li>
           </ul>
         </div>
       )}

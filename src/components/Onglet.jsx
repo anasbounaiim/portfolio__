@@ -5,7 +5,7 @@ import Home from "./content/Home";
 import About from "./content/About";
 import Porfolio from "./content/Portfolio";
 import Contact from "./content/Contact";
-import XOGame from "./content/XOGame";
+import Games from "./content/Games";
 
 import "animate.css";
 
@@ -96,9 +96,9 @@ const Onglet = ({
             </div>
           ) : null}
            {/* Home content */}
-           {content === "xogame" ? (
+           {content === "games" ? (
             <div className="my-7 bg-white">
-              <XOGame />
+              <Games />
             </div>
           ) : null}
           {content === "bin" ? (

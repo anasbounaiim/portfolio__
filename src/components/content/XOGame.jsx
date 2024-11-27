@@ -115,15 +115,15 @@ const XOGame = () => {
   };
 
   return (
-    <div className="bg-white text-gray-900 mt-20 flex flex-col justify-center items-center">
+    <div className="bg-white text-gray-900 flex flex-col justify-center items-center py-8">
       <h2 className="text-5xl font-bold mb-6">Tic-Tac-Toe</h2>
 
       {/* Game Board */}
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-3">
         {board.map((cell, index) => (
           <button
             key={index}
-            className={`w-16 h-16 flex justify-center items-center rounded-lg text-3xl font-bold shadow-md ${
+            className={`w-20 h-20 flex justify-center items-center rounded-lg text-4xl font-bold shadow-md ${
               cell === "X"
                 ? "bg-red-500 text-white"
                 : cell === "O"
@@ -146,14 +146,14 @@ const XOGame = () => {
       )}
 
       {/* Score Panel */}
-      <div className="mt-6 flex justify-center space-x-2">
-        <div className="bg-red-500 text-white px-3 py-1 rounded-md">
+      <div className="mt-6 flex justify-center space-x-4">
+        <div className="bg-red-500 text-white px-4 py-2 text-lg rounded-md">
           X (You): {score.X}
         </div>
-        <div className="bg-gray-500 text-white px-3 py-1 rounded-md">
+        <div className="bg-gray-500 text-white px-4 py-2 text-lg rounded-md">
           Ties: {score.Draws}
         </div>
-        <div className="bg-green-500 text-white px-3 py-1 rounded-md">
+        <div className="bg-green-500 text-white px-4 py-2 text-lg rounded-md">
           O (CPU): {score.O}
         </div>
       </div>
@@ -161,7 +161,7 @@ const XOGame = () => {
       {/* Restart Button */}
       <button
         onClick={resetGame}
-        className="mt-6 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-md"
+        className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg rounded-md"
       >
         Restart Game
       </button>
