@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import "animate.css";
+import { FaPlay } from "react-icons/fa";
+
 
 import XOGame from "./XOGame";
 import Snake from "./Snake";
 import RockPaperScissors from "./RockPaperScissors";
 import ShuffleCards from "./ShuffleCards";
+import PingPong from "./PingPong";
+import Spaceinvaders from "./Spaceinvaders"
 
 const Games = () => {
   const [selectedGame, setSelectedGame] = useState(null);
@@ -21,11 +25,50 @@ const Games = () => {
   }, []);
 
   const gamesList = [
-    { id: 1, name: "Tic-Tac-Toe", component: <XOGame />, color: "bg-red-500" },
-    { id: 2, name: "Snake", component: <Snake />, color: "bg-green-500" },
-    { id: 3, name: "Rock Paper Scissors", component: <RockPaperScissors />, color: "bg-blue-500" },
-    { id: 4, name: "Memory Card Game", component: <ShuffleCards />, color: "bg-pink-500" },
+    {
+      id: 1,
+      name: "Tic-Tac-Toe",
+      description: "A classic strategy game where two players aim to align three X's or O's in a row.",
+      component: <XOGame />,
+      color: "bg-red-500",
+    },
+    {
+      id: 2,
+      name: "Snake",
+      description: "Guide the snake to eat food while avoiding walls and its own tail.",
+      component: <Snake />,
+      color: "bg-green-500",
+    },
+    {
+      id: 3,
+      name: "Rock Paper Scissors",
+      description: "Challenge the computer to the timeless game of strategy and luck.",
+      component: <RockPaperScissors />,
+      color: "bg-blue-500",
+    },
+    {
+      id: 4,
+      name: "Memory Card Game",
+      description: "Test your memory by matching pairs of cards in as few moves as possible.",
+      component: <ShuffleCards />,
+      color: "bg-pink-500",
+    },
+    {
+      id: 5,
+      name: "PingPong",
+      description: "Play the fast-paced arcade classic against the computer.",
+      component: <PingPong />,
+      color: "bg-purple-500",
+    },
+    {
+      id: 6,
+      name: "Space Invaders",
+      description: "Defend the galaxy from waves of alien invaders in this retro arcade game.",
+      component: <Spaceinvaders />,
+      color: "bg-cyan-500",
+    },
   ];
+  
 
   const selectGame = (game) => {
     setSelectedGame(game);
@@ -63,17 +106,35 @@ const Games = () => {
           ) : (
             <>
               <h1 className="text-4xl font-bold mb-6 mt-16">Games Library</h1>
-              <div className="grid grid-cols-2 gap-6">
-                {gamesList.map((game) => (
-                  <div
-                    key={game.id}
-                    className={`cursor-pointer ${game.color} text-white flex justify-center items-center h-40 w-40 rounded-lg shadow-lg text-center hover:animate__animated hover:animate__bounce`}
-                    onClick={() => selectGame(game)}
-                  >
-                    <h2 className="text-xl font-bold">{game.name}</h2>
-                  </div>
-                ))}
-              </div>
+              <div className="grid grid-cols-3 gap-4">
+  {gamesList.map((game) => (
+    <div
+      key={game.id}
+      className="cursor-pointer bg-white shadow-md border w-48 rounded-lg hover:shadow-xl transition-shadow pt-2 px-3 pb-3 flex flex-col items-center group"
+      onClick={() => selectGame(game)}
+    >
+      {/* Game Card */}
+      <div
+        className={`h-24 w-full rounded-md ${game.color} flex items-center justify-center text-4xl font-bold text-white relative`}
+      >
+        {/* Default letter */}
+        <span className="absolute inset-0 flex items-center justify-center group-hover:hidden">
+          {game.name.charAt(0)}
+        </span>
+        {/* Play icon on hover */}
+        <span className="absolute inset-0 flex items-center justify-center hidden group-hover:flex">
+          <FaPlay className="text-white text-3xl" />
+        </span>
+      </div>
+      <div className="text-center mt-4">
+        <p className="text-lg font-semibold">{game.name}</p>
+        {/* Description */}
+        <p className="text-sm text-gray-600 mt-2">{game.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
             </>
           )}
         </div>

@@ -76,7 +76,7 @@ const RockPaperScissors = () => {
           ) : (
             <FaRegHandRock size={50} className="text-gray-300" />
           )}
-          <p className="mt-2 text-xl font-medium text-gray-800">Computer</p>
+          <p className="mt-2 text-xl font-medium text-gray-800">CPU</p>
         </div>
       </div>
 
@@ -108,7 +108,7 @@ const RockPaperScissors = () => {
           Ties: {ties}
         </div>
         <div className="bg-green-500 text-white px-4 py-2 text-lg rounded-md">
-          Computer : {computerScore}
+          CPU : {computerScore}
         </div>
       </div>
 
