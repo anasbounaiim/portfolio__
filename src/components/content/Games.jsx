@@ -105,7 +105,7 @@ const Games = () => {
             </div>
           ) : (
             <>
-              <h1 className="text-4xl font-bold mb-6 mt-16">Games Library</h1>
+              <h1 className="text-4xl font-bold mb-6 mt-12">Games Library</h1>
               <div className="grid grid-cols-3 gap-4">
   {gamesList.map((game) => (
     <div
