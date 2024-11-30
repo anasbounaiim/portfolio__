@@ -5,10 +5,10 @@ const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
   const [showPlaylist, setShowPlaylist] = useState(false);
 
   return (
-    <div className="flex flex-row absolute right-48 h-[17rem]">
+    <div className="flex flex-row absolute right-44 h-[17rem]">
       {/* Playlist */}
       {showPlaylist && (
-        <div className=" w-52 h-[12rem] overflow-y-scroll rounded-md animate__animated  animate__fadeIn animate__faster">
+        <div className=" w-44 h-[10rem] overflow-y-scroll rounded-md animate__animated  animate__fadeIn animate__faster">
           {audioTracks.map((track, index) => (
             <div
               key={index}
@@ -17,11 +17,11 @@ const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
               <button
                 className={`w-full ${
                   index === currentTrackIndex ? "bg-gray-300" : ""
-                } text-left px-5 border-b-[1px] h-10 border-gray-400  flex items-center`}
+                } text-left px-5 border-b-[1px] h-8 border-gray-400  flex items-center`}
                 onClick={() => handleTrackChange(index)}
               >
-                <span className="w-[100%] h-7 overflow-hidden text-sm">
-                  <span className="text-sm">{index+1} - </span>  {track.title} 
+                <span className="w-[100%] h-7 flex items-center overflow-hidden text-xs">
+                  <span className="text-xs">{index+1} - </span>  {track.title} 
                 </span>
               </button>
             </div>
