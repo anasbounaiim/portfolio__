@@ -3,6 +3,7 @@ import icon_portfolio from "../../assets/portfolio-icon.png";
 import cfpnc_group from "../../assets/cp-banner.jpg";
 import quran_brown from "../../assets/quran_brown.png";
 import water_use from "../../assets/water_use.png";
+import github_wall from "../../assets/github-wall.png";
 
 import { IoClose } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
@@ -72,6 +73,19 @@ const Porfolio = () => {
       link: "https://a1muslim.netlify.app/",
       content: "Discover a holistic Muslim web application designed to enrich your spiritual journey. This all-in-one platform seamlessly integrates the Quran, offering a digital haven for reading and contemplating its verses. Stay connected with prayer times tailored to your location, and engage in heartfelt supplications with the included Tasbih and Duaa features. Immerse yourself in the profound beauty of the 99 names of Allah, fostering a deeper connection to divine attributes. Embrace the convenience of this web app, your guide to a more meaningful and connected spiritual life",
     },
+    {
+      id: 4,
+      emoji: "😽",
+      color: "bg-indigo-500",
+      image: github_wall, // Optional, use if you want to add a visual element
+      name: "🔗 Explore My GitHub 🔗",
+      title: "",
+      tech: ["Web", "AI", "ML", "Data Science"], // List the areas covered by your projects
+      link: "https://github.com/anasbounaiim",
+      content: "Dive into my GitHub profile to explore a wide array of projects that span various technologies, each tailored to tackle unique challenges. From developing dynamic web applications that enhance user engagement through intuitive interfaces and robust back-end functionalities to crafting advanced machine learning models that predict, analyze, and interpret complex datasets, my projects demonstrate a deep commitment to solving real-world problems. Additionally, you'll find projects focusing on artificial intelligence that power smart solutions in sectors such as healthcare, finance, and e-commerce. Discover the power of diverse tech stacks and how they can be leveraged to optimize performance, ensure scalability, and deliver impactful user experiences."
+}
+    
+    
     // Add more cards as needed
   ];
   return (
@@ -117,6 +131,7 @@ const Porfolio = () => {
                   <div className="px-3 text-gray-400 overflow-hidden text-xs max-h-[4.3rem] pt-2 leading-3 ">
                     {card.content}
                   </div>
+                  
                   
                 </div>
               ))}
