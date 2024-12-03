@@ -3,9 +3,9 @@ import { FiRefreshCw } from "react-icons/fi";
 
 const PongGame = () => {
   const boardWidth = 600;
-  const boardHeight = 400;
+  const boardHeight = 360;
   const paddleWidth = 15;
-  const paddleHeight = 100;
+  const paddleHeight = 90;
   const ballSize = 15;
 
   const initialBallSpeed = 4;

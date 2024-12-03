@@ -129,8 +129,8 @@ const SnakeGame = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-white">
-      <h1 className="text-5xl font-bold text-black mb-4">Snake Game</h1>
-      <h2 className="text-2xl text-gray-700 mb-4">Score: {score}</h2>
+      <h1 className="text-5xl font-bold text-black ">Snake Game</h1>
+      <h2 className="text-2xl text-gray-700 mb-1">Score: {score}</h2>
       <div
         className="relative grid"
         style={{

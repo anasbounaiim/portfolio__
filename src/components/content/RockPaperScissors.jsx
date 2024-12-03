@@ -59,7 +59,7 @@ const RockPaperScissors = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-white">
-      <h1 className="text-4xl font-bold mb-6 text-gray-800">Rock Paper Scissors</h1>
+      <h1 className="text-4xl font-bold mb-3 text-gray-800">Rock Paper Scissors</h1>
 
       <div className="flex items-center justify-between w-80 mb-8">
         <div className="flex flex-col text-center">

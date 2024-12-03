@@ -116,7 +116,7 @@ const XOGame = () => {
   };
 
   return (
-    <div className="bg-white text-gray-900 flex flex-col justify-center items-center py-8">
+    <div className="bg-white text-gray-900 flex flex-col justify-center items-center py-0">
       <h2 className="text-5xl font-bold mb-6">Tic-Tac-Toe</h2>
 
       {/* Game Board */}

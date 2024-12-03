@@ -223,7 +223,7 @@ const handleDivClick = (index) => {
                   title={gamesTitle}
                   content="games"
                   handleClick={handleClickGames}
-                  size="w-[700px] h-[700px]"
+                  size="w-[700px] h-[640px]"
                   id={divs[0].id}
                   initialX={divs[0].x}
                   initialY={divs[0].y}
