@@ -133,13 +133,13 @@ const Contact = () => {
             </p>
             <ul className="flex justify-center items-center gap-8 font text-white">
               <li className="bg-gradient-to-r from-blue-500 to-blue-600 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center my-3 rounded-full">
-                LinkedIn
+                <a href="https://www.linkedin.com/in/anas-bounaim-37450621a/" target="_blank">LinkedIn</a>
               </li>
               <li className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center my-3 rounded-full">
-                Instagram
+                <a href="https://www.instagram.com/anasbounaiim/" target="_blank">Instagram</a>
               </li>
               <li className="bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center my-3 rounded-full">
-                GitHub
+                <a href="https://github.com/anasbounaiim" target="_blank">GitHub</a>
               </li>
             </ul>
           </div>
