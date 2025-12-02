@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import 'animate.css';
-import icon from "../assets/icon_buu.png"
-import icon_home from "../assets/home-icon.png"
-import icon_about from "../assets/about-icon.png"
-import icon_portfolio from "../assets/portfolio-icon.png"
-import icon_contact from "../assets/contact-icon.png"
-import icon_bin from "../assets/bin.png"
-import icon_games from "../assets/icon_games.png"
+import icon from "../../assets/icon_buu.png"
+import icon_home from "../../assets/home-icon.png"
+import icon_about from "../../assets/about-icon.png"
+import icon_portfolio from "../../assets/portfolio-icon.png"
+import icon_contact from "../../assets/contact-icon.png"
+import icon_bin from "../../assets/bin.png"
+import icon_games from "../../assets/icon_games.png"
 
 
 

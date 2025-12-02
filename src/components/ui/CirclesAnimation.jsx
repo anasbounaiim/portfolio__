@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import "../index.css";
+import "../../index.css";
 
 const CirclesAnimation = () => {
   const circlesRef = useRef([]);

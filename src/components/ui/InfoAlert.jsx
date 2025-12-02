@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "animate.css";
 import { MdOutlineClose } from "react-icons/md";
-import info_icon from '../assets/info-icon.png'
+import info_icon from "../../assets/info-icon.png";
 
 const InfoAlert = () => {
   const [isVisible, setIsVisible] = useState(true);

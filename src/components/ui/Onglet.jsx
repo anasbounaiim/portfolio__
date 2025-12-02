@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineClose } from "react-icons/md";
 
-import Home from "./content/Home";
-import About from "./content/About";
-import Porfolio from "./content/Portfolio";
-import Contact from "./content/Contact";
-import Games from "./content/Games";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Porfolio from "../pages/Portfolio";
+import Contact from "../pages/Contact";
+import Games from "../games/Games";
 
 import "animate.css";
 

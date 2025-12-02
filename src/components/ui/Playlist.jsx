@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import playlist_icon from "../assets/playlist_icon.png";
+import playlist_icon from "../../assets/playlist_icon.png";
 
 const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
   const [showPlaylist, setShowPlaylist] = useState(false);

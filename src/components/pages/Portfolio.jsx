@@ -7,33 +7,30 @@ import github_wall from "../../assets/github-wall.png";
 
 import { IoClose } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
+
 import { FaPhp } from "react-icons/fa";
 import { TbBrandVite } from "react-icons/tb";
 import { SiTailwindcss } from "react-icons/si";
 import { SiAdobephotoshop } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
 
-
 const Porfolio = () => {
   const [isLoadingContent, setIsLoadingContent] = useState(true);
   const [selectedCard, setSelectedCard] = useState(null);
 
   useEffect(() => {
-    // Simulate loading by setting isLoading to false after a delay (e.g., 2 seconds)
     const loadingTimeout = setTimeout(() => {
       setIsLoadingContent(false);
     }, 1000);
 
-    return () => clearTimeout(loadingTimeout); // Clean up the timeout if the component unmounts before loading completes
+    return () => clearTimeout(loadingTimeout);
   }, []);
 
   const handleCardClick = (cardId) => {
-    // Show details when a card is clicked
     setSelectedCard(cardId);
   };
 
   const handleCloseDetails = () => {
-    // Close details when the modal is closed
     setSelectedCard(null);
   };
 
@@ -41,56 +38,81 @@ const Porfolio = () => {
   const cardsData = [
     {
       id: 1,
-      emoji:"✈️👨‍✈️",
-      color :"bg-green-500",
-      image: cfpnc_group, // Image source for card 1,
-      name: " Data Manager and Application Developer CFPNC",
-      title: "Front-End Developer👨‍🎨👨‍💻",
-      tech: ["ReactJS","vite", "tailwind","photoshop"],
+      emoji: "✈️👨‍✈️",
+      color: "bg-green-500",
+      image: cfpnc_group,
+      name: "Data Manager & App Developer – CFPNC",
+      title: "Fullstack Developer 👨‍💻",
+      tech: ["ReactJS", "vite", "tailwind", "photoshop"],
       link: null,
       content:
-        "This project aims to develop a comprehensive registration data management application for a Center for Professional and New Skills Formation (CFPNC), including a powerful dashboard for data analysis. As data managers, our goal is to create a versatile software solution that simplifies registration management and provides advanced tools for academic data analysis. Additionally, the project encompasses the development of a pre-registration page, enhancing the overall user experience and streamlining the enrollment process.",
+        "Designed and implemented a secure academic data platform for CFPNC with dashboards, structured storage and registration management. The goal was to simplify data workflows while giving the team a clear, visual view of student records and training activities.",
     },
     {
       id: 2,
-      emoji:"🌍💧",
-      color :"bg-red-500",
-      image: water_use, // Image source for card 2
-      name: "AIEM Event Web Site",
-      title: "Front-End Developer👨‍🎨👨‍💻",
-      tech: ["ReactJS", "vite","photoshop"],
+      emoji: "🌍💧",
+      color: "bg-red-500",
+      image: water_use,
+      name: "AIEM – Event Web Site",
+      title: "Front-End Developer 👨‍🎨👨‍💻",
+      tech: ["ReactJS", "vite", "photoshop"],
       link: "https://aiem-event.vercel.app/",
-      content: `The frontend website for the event "Aiem La Gestion Durable de L’Eau, Vers Un Modèle Innovant ET Résilient" was crafted using React.js, a powerful JavaScript library for building user interfaces. Leveraging React's modular architecture, the development process involved creating reusable components to structure the interface effectively. Tailwind CSS was employed for responsive styling, ensuring an appealing design across various devices. The website featured dynamic elements, such as interactive schedules, speaker profiles, and registration forms, enhancing user engagement. Through React's virtual DOM optimization, the website delivered a seamless and responsive experience, showcasing innovation in water management and resilience.`,
+      content:
+        'Frontend for the event "La Gestion Durable de l’Eau, Vers Un Modèle Innovant et Résilient". Built with reusable React components, responsive layout and a clean UI for schedules, speakers and registration, to highlight innovation in water management.',
     },
     {
       id: 3,
-      emoji:"🕋📿",
-      color :"bg-yellow-800",
-      image: quran_brown, // Image source for card 3
+      emoji: "🕋📿",
+      color: "bg-yellow-800",
+      image: quran_brown,
       name: "Read Quran Web App",
-      title: "Front-End Developer👨‍🎨👨‍💻",
-      tech: ["ReactJS", "postman","tailwind","vite","photoshop"],
+      title: "Front-End Developer 👨‍🎨👨‍💻",
+      tech: ["ReactJS", "postman", "tailwind", "vite", "photoshop"],
       link: "https://a1muslim.netlify.app/",
-      content: "Discover a holistic Muslim web application designed to enrich your spiritual journey. This all-in-one platform seamlessly integrates the Quran, offering a digital haven for reading and contemplating its verses. Stay connected with prayer times tailored to your location, and engage in heartfelt supplications with the included Tasbih and Duaa features. Immerse yourself in the profound beauty of the 99 names of Allah, fostering a deeper connection to divine attributes. Embrace the convenience of this web app, your guide to a more meaningful and connected spiritual life",
+      content:
+        "An all-in-one Muslim web app: read Quran, follow prayer times, use Tasbih & Duaa, and explore the 99 Names of Allah. Designed to make daily spiritual practice easier and more accessible.",
     },
     {
       id: 4,
       emoji: "😽",
       color: "bg-indigo-500",
-      image: github_wall, // Optional, use if you want to add a visual element
+      image: github_wall,
       name: "🔗 Explore My GitHub 🔗",
       title: "",
-      tech: ["Web", "AI", "ML", "Data Science"], // List the areas covered by your projects
+      tech: ["Web", "AI", "ML", "Data Science"],
       link: "https://github.com/anasbounaiim",
-      content: "Dive into my GitHub profile to explore a wide array of projects that span various technologies, each tailored to tackle unique challenges. From developing dynamic web applications that enhance user engagement through intuitive interfaces and robust back-end functionalities to crafting advanced machine learning models that predict, analyze, and interpret complex datasets, my projects demonstrate a deep commitment to solving real-world problems. Additionally, you'll find projects focusing on artificial intelligence that power smart solutions in sectors such as healthcare, finance, and e-commerce. Discover the power of diverse tech stacks and how they can be leveraged to optimize performance, ensure scalability, and deliver impactful user experiences."
-}
-    
-    
+      content:
+        "Explore a wide range of projects: dynamic web apps, automation scripts, ML experiments and more. Each repository reflects my focus on clean code, problem-solving and learning through real-world use cases.",
+    },
+    {
+      id: 5,
+      emoji: "🎬🍿",
+      color: "bg-emerald-600",
+      image: github_wall,
+      name: "KaguyaCiné – Web Ticket Booking",
+      title: "Fullstack Project – Next.js & Spring Boot",
+      tech: ["ReactJS", "tailwind", "postman"],
+      link: null,
+      content:
+        "Cinema web app with movie catalog, seat booking, online payments and mood-based film recommendations. Built with Next.js on the frontend and Spring Boot microservices with PostgreSQL, Docker and Keycloak on the backend, plus GPT-4o for smart suggestions.",
+    },
+    {
+      id: 6,
+      emoji: "🚌📦",
+      color: "bg-orange-500",
+      image: github_wall,
+      name: "Trans Ghazala – Transport Platform",
+      title: "Front-End Developer 👨‍🎨",
+      tech: ["ReactJS", "tailwind", "vite", "photoshop"],
+      link: null,
+      content:
+        "Responsive web platform for a transport & logistics company, covering travel, tourism and parcel tracking. Built with Next.js, Tailwind CSS and modern UI libraries to deliver a modular, smooth and brand-aligned user experience.",
+    },
     // Add more cards as needed
   ];
+
   return (
     <>
-      {/* ... (previous loading check) */}
       {isLoadingContent ? (
         <div className="flex items-center justify-center h-[550px]">
           <div
@@ -110,7 +132,7 @@ const Porfolio = () => {
             </div>
 
             {/* Display Cards */}
-            <div className="mt-4 grid grid-cols-3  gap-6 justify-center items-center">
+            <div className="mt-4 grid grid-cols-3 gap-6 justify-center items-center">
               {cardsData.map((card) => (
                 <div
                   key={card.id}
@@ -119,28 +141,27 @@ const Porfolio = () => {
                   }`}
                   onClick={() => handleCardClick(card.id)}
                 >
-                    <div className={` w-full h-32 ${card.color} flex justify-center items-center m-0`}>
-                <span className="text-5xl">{card.emoji}</span>
-
+                  <div
+                    className={`w-full h-32 ${card.color} flex justify-center items-center m-0`}
+                  >
+                    <span className="text-5xl">{card.emoji}</span>
                   </div>
 
-                  <h1 className="px-3 pt-1  max-h-[4.5rem] overflow-hidden  text-2xl font-extrabold">
+                  <h1 className="px-3 pt-1 max-h-[4.5rem] overflow-hidden text-2xl font-extrabold">
                     {card.name}
                   </h1>
                   <p className="px-3 leading-3 text-sm ">{card.title}</p>
                   <div className="px-3 text-gray-400 overflow-hidden text-xs max-h-[4.3rem] pt-2 leading-3 ">
                     {card.content}
                   </div>
-                  
-                  
                 </div>
               ))}
             </div>
 
             {/* Modal for Image with Text Details */}
             {selectedCard && (
-              <div className="fixed top-10 left-0 w-full h-full bg-black  bg-opacity-50 flex items-center justify-center">
-                <div className="bg-white  rounded-md w-[70%] h-[70%]  overflow-y-scroll ">
+              <div className="fixed top-10 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+                <div className="bg-white rounded-md w-[70%] h-[70%] overflow-y-scroll ">
                   <div className="fixed w-[30rem]">
                     <button
                       className="text-white float-right relative top-1 right-1 "
@@ -149,7 +170,7 @@ const Porfolio = () => {
                       <IoClose className="text-2xl" />
                     </button>
                   </div>
-                  {/* Your image and text details go here */}
+
                   <div className="w-full h-36 overflow-hidden m-0">
                     <img
                       className="w-full"
@@ -171,6 +192,7 @@ const Porfolio = () => {
                     <p className="text-xl ">
                       {cardsData[selectedCard - 1].title}
                     </p>
+
                     {/* tech section */}
                     <p className="text-3xl flex items-center gap-1 mt-2">
                       {cardsData[selectedCard - 1].tech.includes("ReactJS") ? (
@@ -188,23 +210,29 @@ const Porfolio = () => {
                           <TbBrandVite />
                         </span>
                       ) : null}
-                      {cardsData[selectedCard - 1].tech.includes("tailwind") ? (
+                      {cardsData[selectedCard - 1].tech.includes(
+                        "tailwind"
+                      ) ? (
                         <span className="mr-1 text-cyan-500">
                           <SiTailwindcss />
                         </span>
                       ) : null}
-                      {cardsData[selectedCard - 1].tech.includes("photoshop") ? (
+                      {cardsData[selectedCard - 1].tech.includes(
+                        "photoshop"
+                      ) ? (
                         <span className="mr-1 text-blue-800 ">
                           <SiAdobephotoshop className="text-2xl" />
                         </span>
                       ) : null}
-                      {cardsData[selectedCard - 1].tech.includes("postman") ? (
+                      {cardsData[selectedCard - 1].tech.includes(
+                        "postman"
+                      ) ? (
                         <span className="mr-1 text-orange-500 ">
-                          <SiPostman className="text-2xl"/>
+                          <SiPostman className="text-2xl" />
                         </span>
                       ) : null}
                     </p>
-                    {/* -------------------------------------- */}
+
                     <p className="text-gray-500 text-sm pt-5">
                       {cardsData[selectedCard - 1].content}
                     </p>

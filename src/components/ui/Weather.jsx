@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import cloud from "../assets/wheather_icons/cloud.png";
-import rain from "../assets/wheather_icons/rain.png";
-import mist from "../assets/wheather_icons/mist.png";
-import drizzle from "../assets/wheather_icons/drizzle.png";
-import sun from "../assets/wheather_icons/sun.png";
-import man from "../assets/wheather_icons/man.png";
+import cloud from "../../assets/wheather_icons/cloud.png";
+import rain from "../../assets/wheather_icons/rain.png";
+import mist from "../../assets/wheather_icons/mist.png";
+import drizzle from "../../assets/wheather_icons/drizzle.png";
+import sun from "../../assets/wheather_icons/sun.png";
+import man from "../../assets/wheather_icons/man.png";
 
 import { FaMagnifyingGlass } from "react-icons/fa6";
 

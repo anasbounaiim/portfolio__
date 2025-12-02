@@ -1,29 +1,35 @@
 import React, { useRef, useState, useEffect } from "react";
-import megadose from "../assets/MEGADOSE.mp3";
-import ouf from "../assets/ouf.mp3";
-import Sucre_SaleV from "../assets/SucreSaleV.mp3";
-import VetoV from "../assets/Vetov.mp3";
-import KillV from "../assets/KILLv.mp3";
-import MorV from "../assets/Lmorphiniya34V.mp3";
-import tictacV from "../assets/TicTacv.mp3";
 
+// 🎵 Audio files
+import megadose from "../../assets/MEGADOSE.mp3";
+import ouf from "../../assets/ouf.mp3";
+import Sucre_SaleV from "../../assets/SucreSaleV.mp3";
+import VetoV from "../../assets/Vetov.mp3";
+import KillV from "../../assets/KILLv.mp3";
+import MorV from "../../assets/Lmorphiniya34V.mp3";
+import tictacV from "../../assets/TicTacv.mp3";
+
+// 📄 Playlist component
 import Playlist from "./Playlist";
 
-import audio_anim from "../assets/anime3.jpg";
-import audio_anim1 from "../assets/anime1.jpg";
-import audio_anim2 from "../assets/anime2.jpg";
-import morphoto from "../assets/m36.png";
-import Sucre_Sale from "../assets/Sucre_Sale.png";
-import Veto from "../assets/Veto.png";
-import Kill from "../assets/KILL.png";
-import TicTac from "../assets/tictac.png";
+// 🎨 Images for songs
+import audio_anim from "../../assets/anime3.jpg";
+import audio_anim1 from "../../assets/anime1.jpg";
+import audio_anim2 from "../../assets/anime2.jpg";
+import morphoto from "../../assets/m36.png";
+import Sucre_Sale from "../../assets/Sucre_Sale.png";
+import Veto from "../../assets/Veto.png";
+import Kill from "../../assets/KILL.png";
+import TicTac from "../../assets/tictac.png";
 
-import play_btn from "../assets/play_btn.png";
-import pause_btn from "../assets/pause_btn.png";
-import next_btn from "../assets/next_btn.png";
-import back_btn from "../assets/back_btn.png";
-import mute_btn from "../assets/mute_btn.png"; // Add a mute button image
-import unmute_btn from "../assets/unmute_btn.png"; // Add an unmute button image
+// 🎛️ UI buttons
+import play_btn from "../../assets/play_btn.png";
+import pause_btn from "../../assets/pause_btn.png";
+import next_btn from "../../assets/next_btn.png";
+import back_btn from "../../assets/back_btn.png";
+import mute_btn from "../../assets/mute_btn.png";
+import unmute_btn from "../../assets/unmute_btn.png";
+
 
 const AudioPlayer = () => {
   const audioRef = useRef(null);

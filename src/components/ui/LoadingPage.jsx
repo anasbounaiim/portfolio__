@@ -1,4 +1,4 @@
-import loading from "../assets/loading-buu.gif"
+import loading from "../../assets/loading-buu.gif"
 import 'animate.css';
 
 const LoadingPage = () => {
