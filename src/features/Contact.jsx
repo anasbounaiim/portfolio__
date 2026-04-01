@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import icon_contact from "../../assets/contact-icon.png";
+import icon_contact from "../assets/contact-icon.png";
 import emailjs from "@emailjs/browser";
 import { FaPaperPlane, FaRocket } from "react-icons/fa"; // Import React Icons
 

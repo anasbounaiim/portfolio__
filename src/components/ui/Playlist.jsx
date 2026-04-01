@@ -1,42 +1,61 @@
-import React, { useState } from "react";
-import playlist_icon from "../../assets/playlist_icon.png";
+import React from "react";
 
-const Playlist = ({ audioTracks, currentTrackIndex, handleTrackChange }) => {
-  const [showPlaylist, setShowPlaylist] = useState(false);
+const Playlist = ({
+  audioTracks,
+  currentTrackIndex,
+  handleTrackChange,
+  showPlaylist,
+}) => {
+  if (!showPlaylist) return null;
 
   return (
-    <div className="flex flex-row absolute right-44 h-[17rem]">
-      {/* Playlist */}
-      {showPlaylist && (
-        <div className=" w-44 h-[10rem] overflow-y-scroll rounded-md animate__animated  animate__fadeIn animate__faster">
-          {audioTracks.map((track, index) => (
-            <div
-              key={index}
-              className="bg-gray-100 text-gray-500  font-semibold "
-            >
-              <button
-                className={`w-full ${
-                  index === currentTrackIndex ? "bg-gray-300" : ""
-                } text-left px-5 border-b-[1px] h-8 border-gray-400  flex items-center`}
-                onClick={() => handleTrackChange(index)}
-              >
-                <span className="w-[100%] h-7 flex items-center overflow-hidden text-xs">
-                  <span className="text-xs">{index+1} - </span>  {track.title} 
-                </span>
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="w-[200px] rounded-[1.25rem] overflow-hidden border border-white/10 bg-white/10 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.45)] animate__animated animate__fadeInLeft animate__faster">
 
-      {/* Toggle Button */}
-      <div>
-        <div
-          onClick={() => setShowPlaylist(!showPlaylist)}
-          className=" text-white opacity-60 w-7 h-7  flex items-center justify-center  cursor-pointer mt-[4rem] absolute z-50"
-        >
-          <img src={playlist_icon} className="w-7 h-7" alt="" />
-        </div>
+      {/* Header (small) */}
+      <div className="px-3 py-2 border-b border-white/10 bg-white/5">
+        <p className="text-[9px] font-semibold tracking-[0.2em] uppercase text-white/80">
+          Playlist
+        </p>
+      </div>
+
+      {/* Tracks */}
+      <div className="max-h-[220px] overflow-y-auto p-1.5 space-y-1 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        {audioTracks.map((track, index) => {
+          const isActive = index === currentTrackIndex;
+
+          return (
+            <button
+              key={index}
+              onClick={() => handleTrackChange(index)}
+              className={`w-full text-left rounded-xl px-2 py-2 flex items-center gap-2 transition-all duration-200 ${isActive
+                  ? "bg-[#316ac5]/90 text-white"
+                  : "bg-white/[0.04] text-white/80 hover:bg-white/[0.08]"
+                }`}
+            >
+              {/* Small cover */}
+              <img
+                src={track.cover}
+                alt={track.title}
+                className="w-8 h-8 rounded-lg object-cover border border-white/10 shrink-0"
+              />
+
+              {/* Text */}
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-[10px] leading-tight font-medium">
+                  {track.title}
+                </p>
+                <p className="truncate text-[9px] text-white/50">
+                  {track.artist}
+                </p>
+              </div>
+
+              {/* Index */}
+              <span className="text-[9px] text-white/40">
+                {index + 1}
+              </span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );

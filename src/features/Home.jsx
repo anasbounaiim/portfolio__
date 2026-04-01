@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import icon_home from "../../assets/home-icon.png";
-import planet from "../../assets/planet.png";
-import salut from "../../assets/chimie.png";
-import hand from "../../assets/board.png";
-import rabbit from "../../assets/rabbit.png";
-import logoExplain from "../../assets/logo-explain.jpg";
+import icon_home from "../assets/home-icon.png";
+import planet from "../assets/planet.png";
+import salut from "../assets/chimie.png";
+import hand from "../assets/board.png";
+import rabbit from "../assets/rabbit.png";
+import logoExplain from "../assets/logo-explain.jpg";
 
 const Home = () => {
   const [isLoadingContent, setIsLoadingContent] = useState(true);
@@ -63,7 +63,7 @@ const Home = () => {
           <p className="font-serif px-9 text-2xl py-4 text-ellipsis break-all">
             <span className="text-[130px] float-left py-6 px-3">B</span>ehind
             this small “Windows-style” desktop, there is simply my story as a{" "}
-            <strong>developer and IT professional</strong>.  
+            <strong>developer and IT professional</strong>.
             This website is my personal playground where I bring together
             everything I do:{" "}
             <strong>
@@ -76,8 +76,8 @@ const Home = () => {
             windows, chat bubbles, small details everywhere. Each section is a
             “window” into a part of my journey:
             <br />
-            – the <strong>About</strong> page as a friendly chat about my path  
-            – the <strong>Portfolio</strong> as real projects I’ve built  
+            – the <strong>About</strong> page as a friendly chat about my path
+            – the <strong>Portfolio</strong> as real projects I’ve built
             – and links to my <strong>CV</strong>, <strong>GitHub</strong> and{" "}
             <strong>LinkedIn</strong>.
             <br />

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import icon_portfolio from "../../assets/portfolio-icon.png";
-import cfpnc_group from "../../assets/cp-banner.jpg";
-import quran_brown from "../../assets/quran_brown.png";
-import water_use from "../../assets/water_use.png";
-import github_wall from "../../assets/github-wall.png";
+import icon_portfolio from "../assets/portfolio-icon.png";
+import cfpnc_group from "../assets/cp-banner.jpg";
+import quran_brown from "../assets/quran_brown.png";
+import water_use from "../assets/water_use.png";
+import github_wall from "../assets/github-wall.png";
 
 import { IoClose } from "react-icons/io5";
 import { FaReact } from "react-icons/fa";
@@ -136,9 +136,8 @@ const Porfolio = () => {
               {cardsData.map((card) => (
                 <div
                   key={card.id}
-                  className={`cursor-pointer overflow-hidden w-48 h-72 border border-gray-300 rounded-md ${
-                    selectedCard === card.id ? "bg-gray-200" : ""
-                  }`}
+                  className={`cursor-pointer overflow-hidden w-48 h-72 border border-gray-300 rounded-md ${selectedCard === card.id ? "bg-gray-200" : ""
+                    }`}
                   onClick={() => handleCardClick(card.id)}
                 >
                   <div

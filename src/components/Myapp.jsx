@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
+import { useWindowContext } from "../context/WindowContext";
+import { AnimatePresence, motion } from "framer-motion";
 
-// UI components (same folder level, inside /components/ui)
-import Taskbar from "./ui/Taskbar";
+// UI components
+import Taskbar from "./taskbar/Taskbar";
 import LoadingPage from "./ui/LoadingPage";
-import Onglet from "./ui/Onglet";
-import Icon from "./ui/Icon";
+import LoginPage from "./ui/LoginPage";
+import Onglet from "./windows/Onglet";
+import Icon from "./icons/Icon";
 import AudioPlayer from "./ui/AudioPlayer";
 import Weather from "./ui/Weather";
 import RightClickMessage from "./ui/RightClickMessage";
@@ -15,253 +18,127 @@ import InfoAlert from "./ui/InfoAlert";
 // Device detection
 import { isMobile, isTablet, isDesktop } from "react-device-detect";
 
-// ASSETS – Myapp.jsx is in /components → go UP once → /assets
+// ASSETS
 import mobile_page from "../assets/mobile_page.jpg";
-
 import icon_home from "../assets/home-icon.png";
 import icon_about from "../assets/about-icon.png";
 import icon_portfolio from "../assets/portfolio-icon.png";
 import icon_contact from "../assets/contact-icon.png";
 import icon_games from "../assets/icon_games.png";
 import icon_bin from "../assets/bin.png";
-
+import bg_image from "../assets/logo_animated.gif";
 
 function Myapp() {
   const [isLoading, setIsLoading] = useState(true);
-
-  const [showOngletHome, setShowOngletHome] = useState(false);
-  const [showOngletAbout, setShowOngletAbout] = useState(false);
-  const [showOngletPortfolio, setShowOngletPortfolio] = useState(false);
-  const [showOngletContact, setShowOngletContact] = useState(false);
-  const [showOngletGames, setShowOngletGames] = useState(false);
-  const [showOngletBin, setShowOngletBin] = useState(false);
-
-  // One config array for window positions
-  const windows = [
-    { key: "home", x: 250, y: 100 },
-    { key: "about", x: 200, y: 200 },
-    { key: "portfolio", x: 300, y: 150 },
-    { key: "contact", x: 320, y: 110 },
-    { key: "games", x: 350, y: 130 },
-    { key: "bin", x: 600, y: 100 },
-  ];
-
-  // Z-index state for each window (home, about, portfolio, contact, games, bin)
-  const [zIndices, setZIndices] = useState(
-    windows.map((_, index) => index + 1)
-  );
-
-  const handleDivClick = (index) => {
-    setZIndices((prev) => {
-      const maxZIndex = Math.max(...prev);
-      return prev.map((z, i) => (i === index ? maxZIndex + 1 : z));
-    });
-  };
-
-  // Titles with icons
-  const HomeTitle = (
-    <span className="flex items-center">
-      <img src={icon_home} className="w-8 h-8 mr-3" alt="" /> Home
-    </span>
-  );
-  const AboutTitle = (
-    <span className="flex items-center">
-      <img src={icon_about} className="w-8 h-8 mr-3" alt="" /> About
-    </span>
-  );
-  const PortfolioTitle = (
-    <span className="flex items-center">
-      <img src={icon_portfolio} className="w-8 h-8 mr-3" alt="" /> Portfolio
-    </span>
-  );
-  const ContactTitle = (
-    <span className="flex items-center">
-      <img src={icon_contact} className="w-8 h-8 mr-3" alt="" /> Contact
-    </span>
-  );
-  const GamesTitle = (
-    <span className="flex items-center">
-      <img src={icon_games} className="w-8 h-8 mr-3" alt="" /> Games
-    </span>
-  );
-  const BinTitle = (
-    <span className="flex items-center">
-      <img src={icon_bin} className="w-8 h-8 mr-3" alt="" /> Bin
-    </span>
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { windows, openWindow, closeWindow, focusWindow, minimizeWindow, toggleMaximizeWindow } = useWindowContext();
 
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1500);
+
+    window.logOut = () => setIsLoggedIn(false);
 
     return () => clearTimeout(loadingTimeout);
   }, []);
 
-  const handleClickHome = () => setShowOngletHome((v) => !v);
-  const handleClickAbout = () => setShowOngletAbout((v) => !v);
-  const handleClickPortfolio = () => setShowOngletPortfolio((v) => !v);
-  const handleClickContact = () => setShowOngletContact((v) => !v);
-  const handleClickGames = () => setShowOngletGames((v) => !v);
-  const handleClickBin = () => setShowOngletBin((v) => !v);
+  // Icon mapping
+  const iconConfig = {
+    home: { title: "Home", img: icon_home, size: "w-[680px] h-[530px]" },
+    about: { title: "About", img: icon_about, size: "w-[660px] h-[580px]" },
+    portfolio: { title: "Portfolio", img: icon_portfolio, size: "w-[700px] h-[590px]" },
+    contact: { title: "Say hi !", img: icon_contact, size: "w-[600px] h-[570px]" },
+    games: { title: "Games", img: icon_games, size: "w-[700px] h-[640px]" },
+    bin: { title: "Recycle bin", img: icon_bin, size: "w-[600px] h-[510px]" }
+  };
+
+  const getTitleJSX = (id) => (
+    <span className="flex items-center text-sm sm:text-base md:text-lg">
+      <img src={iconConfig[id].img} className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3" alt="" /> {windows[id].title}
+    </span>
+  );
 
   return (
-    <div>
+    <div className="fixed inset-0 overflow-hidden bg-[#070707] selection:bg-blue-500/30">
+      {/* Dimmed Background Logo Layer */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none select-none z-0"
+      >
+        <img 
+          src={bg_image} 
+          alt="" 
+          className="w-[450px] max-w-[80vw] h-auto object-contain"
+        />
+      </div>
       {isDesktop ? (
-        <div>
-          {isLoading ? (
-            <LoadingPage />
-          ) : (
-            <>
-              <InfoAlert />
-              <AudioPlayer />
-              <Weather />
-              <RightClickMessage />
-              <CirclesAnimation />
+        <div className="w-full h-full relative selection:bg-blue-500/30">
+          <AnimatePresence>
+            {isLoading ? (
+              <LoadingPage key="loading" />
+            ) : !isLoggedIn ? (
+              <LoginPage key="login" onLogin={() => setIsLoggedIn(true)} />
+            ) : (
+              <motion.div
+                key="desktop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full h-full"
+              >
+                <InfoAlert />
+                <AudioPlayer />
+                <Weather />
+                <RightClickMessage />
+                <CirclesAnimation />
+                
+                {/* Digital Screen Overlay */}
+                <div className="digital-screen-overlay flicker" />
+                <div className="digital-screen-glow" />
 
-              {/* Desktop icons */}
-              <Icon
-                bgColor=""
-                text="Home"
-                handleClick={handleClickHome}
-                showOnglet={showOngletHome}
-              />
-              <Icon
-                bgColor=""
-                text="About"
-                handleClick={handleClickAbout}
-                showOnglet={showOngletAbout}
-              />
-              <Icon
-                bgColor=""
-                text="Portfolio"
-                handleClick={handleClickPortfolio}
-                showOnglet={showOngletPortfolio}
-              />
-              <Icon
-                bgColor=""
-                text="Say hi !"
-                handleClick={handleClickContact}
-                showOnglet={showOngletContact}
-              />
-              <Icon
-                bgColor=""
-                text="Games"
-                handleClick={handleClickGames}
-                showOnglet={showOngletGames}
-              />
-              <Icon
-                bgColor=""
-                text="Recycle bin"
-                handleClick={handleClickBin}
-                showOnglet={showOngletBin}
-              />
+                {/* Desktop icons */}
+                {Object.keys(windows).map(id => (
+                  <Icon
+                    key={`icon-${id}`}
+                    bgColor=""
+                    text={iconConfig[id].title}
+                    handleClick={() => openWindow(id)}
+                    showOnglet={windows[id].isOpen}
+                  />
+                ))}
 
-              {/* Home window (index 0) */}
-              {showOngletHome && (
-                <Onglet
-                  title={HomeTitle}
-                  content="home"
-                  handleClick={handleClickHome}
-                  size="w-[680px] h-[530px]"
-                  id={0}
-                  initialX={windows[0].x}
-                  initialY={windows[0].y}
-                  styles={zIndices[0]}
-                  onClick={() => handleDivClick(0)}
-                />
-              )}
+                {/* Render Open Windows */}
+                {Object.values(windows).map(win => {
+                  if (!win.isOpen) return null;
 
-              {/* About window (index 1) */}
-              {showOngletAbout && (
-                <Onglet
-                  title={AboutTitle}
-                  content="about"
-                  handleClick={handleClickAbout}
-                  size="w-[660px] h-[580px]"
-                  id={1}
-                  initialX={windows[1].x}
-                  initialY={windows[1].y}
-                  styles={zIndices[1]}
-                  onClick={() => handleDivClick(1)}
-                />
-              )}
+                  const initialX = win.id === 'home' ? 250 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 300 : win.id === 'contact' ? 320 : win.id === 'games' ? 350 : 600;
+                  const initialY = win.id === 'home' ? 100 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 150 : win.id === 'contact' ? 110 : win.id === 'games' ? 130 : 100;
 
-              {/* Portfolio window (index 2) */}
-              {showOngletPortfolio && (
-                <Onglet
-                  title={PortfolioTitle}
-                  content="portfolio"
-                  handleClick={handleClickPortfolio}
-                  size="w-[700px] h-[590px]"
-                  id={2}
-                  initialX={windows[2].x}
-                  initialY={windows[2].y}
-                  styles={zIndices[2]}
-                  onClick={() => handleDivClick(2)}
-                />
-              )}
+                  return (
+                    <Onglet
+                      key={`win-${win.id}`}
+                      title={getTitleJSX(win.id)}
+                      content={win.id}
+                      handleClose={() => closeWindow(win.id)}
+                      handleMinimize={() => minimizeWindow(win.id)}
+                      handleMaximize={() => toggleMaximizeWindow(win.id)}
+                      size={iconConfig[win.id].size}
+                      id={win.id}
+                      initialX={initialX}
+                      initialY={initialY}
+                      styles={win.zIndex}
+                      isMinimized={win.isMinimized}
+                      isMaximized={win.isMaximized}
+                      onFocus={() => focusWindow(win.id)}
+                    />
+                  )
+                })}
 
-              {/* Contact window (index 3) */}
-              {showOngletContact && (
-                <Onglet
-                  title={ContactTitle}
-                  content="contact"
-                  handleClick={handleClickContact}
-                  size="w-[600px] h-[570px]"
-                  id={3}
-                  initialX={windows[3].x}
-                  initialY={windows[3].y}
-                  styles={zIndices[3]}
-                  onClick={() => handleDivClick(3)}
-                />
-              )}
-
-              {/* Games window (index 4) */}
-              {showOngletGames && (
-                <Onglet
-                  title={GamesTitle}
-                  content="games"
-                  handleClick={handleClickGames}
-                  size="w-[700px] h-[640px]"
-                  id={4}
-                  initialX={windows[4].x}
-                  initialY={windows[4].y}
-                  styles={zIndices[4]}
-                  onClick={() => handleDivClick(4)}
-                />
-              )}
-
-              {/* Bin window (index 5) */}
-              {showOngletBin && (
-                <Onglet
-                  title={BinTitle}
-                  content="bin"
-                  handleClick={handleClickBin}
-                  size="w-[600px] h-[510px]"
-                  id={5}
-                  initialX={windows[5].x}
-                  initialY={windows[5].y}
-                  styles={zIndices[5]}
-                  onClick={() => handleDivClick(5)}
-                />
-              )}
-
-              <Taskbar
-                handleClickHome={handleClickHome}
-                handleClickPortfolio={handleClickPortfolio}
-                handleClickAbout={handleClickAbout}
-                handleClickContact={handleClickContact}
-                handleClickGames={handleClickGames}
-                homeIcon={showOngletHome}
-                aboutIcon={showOngletAbout}
-                portfolioIcon={showOngletPortfolio}
-                contactIcon={showOngletContact}
-                gamesIcon={showOngletGames}
-                binIcon={showOngletBin}
-              />
-            </>
-          )}
+                <Taskbar onLogout={() => setIsLoggedIn(false)} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ) : (
         <div className="w-full bg-blue-600">

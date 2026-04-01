@@ -4,9 +4,8 @@ import rain from "../../assets/wheather_icons/rain.png";
 import mist from "../../assets/wheather_icons/mist.png";
 import drizzle from "../../assets/wheather_icons/drizzle.png";
 import sun from "../../assets/wheather_icons/sun.png";
-import man from "../../assets/wheather_icons/man.png";
-
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { HiSun } from "react-icons/hi2";
 
 const Whether = () => {
   const api = {
@@ -24,6 +23,7 @@ const Whether = () => {
     fetch(`${api.base}weather?q=${search}&appid=${api.key}&units=metric`)
       .then((res) => res.json())
       .then((result) => {
+        if (!result.weather) return;
         if (result.weather[0].main === "Clouds") {
           setWeatherIcon(cloud);
           setBgColor("bg-gradient-to-t from-gray-400 to-gray-600");
@@ -40,8 +40,8 @@ const Whether = () => {
           setWeatherIcon(mist);
           setBgColor("bg-gradient-to-t from-gray-200 to-gray-400");
         } else {
-          setWeatherIcon(man);
-          setBgColor("bg-gradient-to-t from-red-400 to-red-600");
+          setWeatherIcon(sun);
+          setBgColor("bg-gradient-to-t from-sky-400 to-sky-600");
         }
 
         setWeather(result);
@@ -57,7 +57,7 @@ const Whether = () => {
   }, []);
 
   return (
-    <div className={`absolute top-[13rem] flex flex-col items-center right-1 w-44 h-44 ${bgColor} mr-6 mt-6 rounded-lg animate__animated animate__fadeInRight`}>
+    <div className={`absolute top-[16rem] flex flex-col items-center right-1 w-44 h-44 ${bgColor} mr-6 mt-2 rounded-lg animate__animated animate__fadeInRight shadow-lg`}>
       <div className="text-white w-[100%] h-[74%]">
         {typeof weather.main !== "undefined" ? (
           <div className="my-2 mt-3 text-xs font-semibold flex flex-col items-center animate__animated animate__fadeIn">
@@ -71,9 +71,9 @@ const Whether = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center w-[100%] h-[100%]">
-            <img className="w-11 h-11" src={man} alt="" />
-            <h1 className="text-base font-bold">Wheather App</h1>
-            <h1 className="text-xs font-bold">Search for a city</h1>
+            <HiSun size={44} className="text-yellow-200 animate-pulse" />
+            <h1 className="text-base font-bold mt-1">Weather App</h1>
+            <h1 className="text-[10px] opacity-80">Search for a city</h1>
           </div>
         )}
       </div>
