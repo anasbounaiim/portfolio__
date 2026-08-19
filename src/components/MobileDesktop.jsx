@@ -104,7 +104,7 @@ export default function MobileDesktop({ onLogout }) {
               <button
                 key={social.id}
                 onClick={() => window.open(social.url, "_blank", "noopener,noreferrer")}
-                className="flex min-w-0 flex-col items-center gap-1.5 active:scale-95"
+                className="mt-2 flex min-w-0 flex-col items-center gap-1.5 active:scale-95"
                 aria-label={`Open ${social.label}`}
               >
                 <span className={`flex max-w-full items-center justify-center rounded-[22%] text-[clamp(1.8rem,9vw,2.25rem)] text-white shadow-lg [height:var(--mobile-icon)] [width:var(--mobile-icon)] ${social.color}`}>
