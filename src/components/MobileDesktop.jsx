@@ -80,18 +80,12 @@ export default function MobileDesktop({ onLogout }) {
       </div>
 
       <div className="relative z-10 flex h-[calc(100dvh-1.75rem)] flex-col">
-        <div className="mobile-welcome px-5 pb-2 pt-[clamp(0.75rem,3vh,1.5rem)]">
-          <p className="text-2xl font-semibold">Welcome, Visitor</p>
-          <p className="text-sm text-white/70">{now.toLocaleDateString([], { weekday: "long", month: "long", day: "numeric" })}</p>
-          <p lang="ar" dir="rtl" className="mt-0.5 w-fit text-sm text-white/60">{new Intl.DateTimeFormat("ar-MA-u-ca-islamic", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(now)}</p>
-        </div>
-
-        <div className="mobile-app-grid grid min-h-0 flex-1 grid-flow-row-dense content-start grid-cols-4 gap-x-1 overflow-y-auto overscroll-contain px-3 py-5 [gap-block:var(--mobile-grid-gap)]">
-          <div className="col-span-2 col-start-1 row-span-2">
+        <div className="mobile-app-grid grid min-h-0 flex-1 grid-flow-row-dense content-start grid-cols-4 gap-x-1 overflow-y-auto overscroll-contain px-3 pb-7 pt-7 [gap-block:var(--mobile-grid-gap)]">
+          <div className="col-span-2 col-start-1 row-span-2 flex justify-center">
             <Weather mobile />
           </div>
           {apps.map((app) => (
-            <button key={app.id} onClick={() => setActiveApp(app.id)} className="flex min-w-0 flex-col items-center gap-1.5 active:scale-95">
+            <button key={app.id} onClick={() => setActiveApp(app.id)} className={`${["portfolio", "contact", "games", "videos", "bin"].includes(app.id) ? "mt-5" : ""} flex min-w-0 flex-col items-center gap-1.5 active:scale-95`}>
               <span className="flex max-w-full items-center justify-center [height:var(--mobile-icon-cell)] [width:var(--mobile-icon-cell)]">
                 <img src={app.icon} alt="" className="object-contain drop-shadow-lg [max-height:var(--mobile-icon)] [max-width:var(--mobile-icon)]" />
               </span>
@@ -104,7 +98,7 @@ export default function MobileDesktop({ onLogout }) {
               <button
                 key={social.id}
                 onClick={() => window.open(social.url, "_blank", "noopener,noreferrer")}
-                className="mt-2 flex min-w-0 flex-col items-center gap-1.5 active:scale-95"
+                className="mt-5 flex min-w-0 flex-col items-center gap-1.5 active:scale-95"
                 aria-label={`Open ${social.label}`}
               >
                 <span className={`flex max-w-full items-center justify-center rounded-[22%] text-[clamp(1.8rem,9vw,2.25rem)] text-white shadow-lg [height:var(--mobile-icon)] [width:var(--mobile-icon)] ${social.color}`}>
@@ -118,7 +112,7 @@ export default function MobileDesktop({ onLogout }) {
 
         <div className="mobile-dock mx-4 mb-[max(12px,env(safe-area-inset-bottom))] flex h-[clamp(4.25rem,10vh,5rem)] shrink-0 items-center justify-around rounded-[24px] border border-white/45 bg-white/30 px-[clamp(0.5rem,4vw,1rem)] shadow-[0_10px_35px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.55)] backdrop-blur-2xl backdrop-saturate-150">
           {apps.slice(0, 4).map((app) => (
-            <button key={app.id} aria-label={app.label} onClick={() => setActiveApp(app.id)} className="h-[clamp(2.8rem,13vw,3.5rem)] w-[clamp(2.8rem,13vw,3.5rem)] p-0.5 active:scale-90">
+            <button key={app.id} aria-label={app.label} onClick={() => setActiveApp(app.id)} className="h-[clamp(3rem,14vw,3.75rem)] w-[clamp(3rem,14vw,3.75rem)] p-0.5 active:scale-90">
               <img src={app.icon} alt="" className="h-full w-full object-contain" />
             </button>
           ))}

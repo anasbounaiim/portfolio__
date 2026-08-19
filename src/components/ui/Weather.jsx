@@ -57,7 +57,7 @@ const Whether = ({ mobile = false }) => {
   }, []);
 
   return (
-    <div className={mobile ? "relative flex aspect-square h-auto w-full min-w-0 flex-col items-center overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
+    <div className={mobile ? "relative flex aspect-square h-auto w-[90%] min-w-0 flex-col items-center overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
       <div className="min-h-0 w-full flex-1 text-white">
         {typeof weather.main !== "undefined" ? (
           <div className="my-2 mt-3 text-xs font-semibold flex flex-col items-center animate__animated animate__fadeIn">
