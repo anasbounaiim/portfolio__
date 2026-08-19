@@ -10,6 +10,7 @@ import icon_portfolio from "../../assets/portfolio-icon.png"
 import icon_contact from "../../assets/contact-icon.png"
 import icon_bin from "../../assets/bin.png"
 import icon_games from "../../assets/icon_games.png"
+import icon_videos from "../../assets/video-icon.svg"
 
 const TaskbarTab = ({ win, isActive, icon, onClick, updateTabPosition }) => {
   const tabRef = useRef(null);
@@ -98,6 +99,7 @@ const Taskbar = ({ onLogout }) => {
     portfolio: icon_portfolio,
     contact: icon_contact,
     games: icon_games,
+    videos: icon_videos,
     bin: icon_bin
   };
 

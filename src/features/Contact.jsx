@@ -63,17 +63,17 @@ const Contact = () => {
           </div>
         </div>
       ) : (
-        <div className="animate__animated animate__fadeIn mt-[3.4rem]">
+        <div className="animate__animated animate__fadeIn mt-5 sm:mt-[3.4rem]">
           <div className="flex justify-center items-center">
             <img src={icon_contact} className="w-12 h-12 mr-4" alt="Contact Icon" />
-            <h1 className="text-5xl">Contact</h1>
+            <h1 className="text-4xl sm:text-5xl">Contact</h1>
           </div>
 
           <div className="flex flex-col justify-center items-center py-5">
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="flex flex-col justify-center items-center"
+              className="flex w-full max-w-80 flex-col items-center justify-center"
             >
               <input
                 type="text"
@@ -81,7 +81,7 @@ const Contact = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 autoComplete="off"
-                className="p-2 m-2 border border-gray-300 rounded-md w-80"
+                className="m-2 w-full rounded-md border border-gray-300 p-2"
                 placeholder="Full Name"
                 aria-label="Full Name"
                 required
@@ -93,7 +93,7 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="off"
-                className="p-2 m-2 border border-gray-300 rounded-md w-80"
+                className="m-2 w-full rounded-md border border-gray-300 p-2"
                 placeholder="Email"
                 aria-label="Email"
                 required
@@ -106,7 +106,7 @@ const Contact = () => {
                 autoComplete="off"
                 cols="20"
                 rows="8"
-                className="p-2 m-2 border border-gray-300 rounded-md w-80"
+                className="m-2 w-full rounded-md border border-gray-300 p-2"
                 placeholder="Message"
                 aria-label="Message"
                 required
@@ -115,7 +115,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`p-2 w-80 text-white rounded-md font-semibold text-lg flex items-center justify-center gap-2 ${
+                className={`p-2 w-full text-white rounded-md font-semibold text-lg flex items-center justify-center gap-2 ${
                   isLoading
                     ? "bg-gray-500 cursor-not-allowed"
                     : "bg-red-500 hover:bg-red-600 cursor-pointer"
@@ -128,10 +128,10 @@ const Contact = () => {
           </div>
 
           <div>
-            <p className="flex justify-center items-center font-serif italic font-extralight">
+            <p className="flex justify-center items-center px-4 text-center font-serif italic font-extralight">
               You can also find me on the following social networks
             </p>
-            <ul className="flex justify-center items-center gap-8 font text-white">
+            <ul className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-8 font text-white">
               <li className="bg-gradient-to-r from-blue-500 to-blue-600 h-7 w-28 hover:animate-pulse cursor-pointer text-center flex justify-center items-center my-3 rounded-full">
                 <a href="https://www.linkedin.com/in/anas-bounaim-37450621a/" target="_blank">LinkedIn</a>
               </li>

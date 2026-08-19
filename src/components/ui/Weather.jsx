@@ -7,7 +7,7 @@ import sun from "../../assets/wheather_icons/sun.png";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { HiSun } from "react-icons/hi2";
 
-const Whether = () => {
+const Whether = ({ mobile = false }) => {
   const api = {
     key: "14b5d8f9ea0dd366e7702251c11d6d9d",
     base: "https://api.openweathermap.org/data/2.5/",
@@ -57,7 +57,7 @@ const Whether = () => {
   }, []);
 
   return (
-    <div className={`absolute top-[16rem] flex flex-col items-center right-1 w-44 h-44 ${bgColor} mr-6 mt-2 rounded-lg animate__animated animate__fadeInRight shadow-lg`}>
+    <div className={mobile ? "relative flex aspect-square h-auto w-full flex-col items-center rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
       <div className="text-white w-[100%] h-[74%]">
         {typeof weather.main !== "undefined" ? (
           <div className="my-2 mt-3 text-xs font-semibold flex flex-col items-center animate__animated animate__fadeIn">

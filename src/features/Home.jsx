@@ -45,9 +45,9 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div className="animate__animated animate__fadeIn overflow-visible py-5">
+        <div className="animate__animated animate__fadeIn overflow-visible py-2 sm:py-5">
           <div className="flex justify-center items-center">
-            <h1 className="text-5xl text-center font-black px-11 py-5 font-serif underline">
+            <h1 className="px-2 py-3 text-center font-serif text-3xl font-black underline sm:px-11 sm:py-5 sm:text-5xl">
               What is this website? Why did I build it?
             </h1>
           </div>
@@ -55,13 +55,13 @@ const Home = () => {
           <div>
             <img
               src={images[currentImageIndex]}
-              className="w-40 h-40 mr-8 my-5 ml-2 float-right"
+              className="mx-auto my-4 h-32 w-32 object-contain sm:float-right sm:ml-2 sm:mr-8 sm:my-5 sm:h-40 sm:w-40"
               alt=""
             />
           </div>
 
-          <p className="font-serif px-9 text-2xl py-4 text-ellipsis break-all">
-            <span className="text-[130px] float-left py-6 px-3">B</span>ehind
+          <p className="font-serif px-2 py-3 text-base leading-relaxed sm:px-9 sm:py-4 sm:text-2xl sm:leading-normal sm:break-all">
+            <span className="float-left px-2 py-2 text-6xl leading-[.75] sm:px-3 sm:py-6 sm:text-[130px]">B</span>ehind
             this small “Windows-style” desktop, there is simply my story as a{" "}
             <strong>developer and IT professional</strong>.
             This website is my personal playground where I bring together

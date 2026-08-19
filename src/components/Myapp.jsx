@@ -14,17 +14,20 @@ import Weather from "./ui/Weather";
 import RightClickMessage from "./ui/RightClickMessage";
 import CirclesAnimation from "./ui/CirclesAnimation";
 import InfoAlert from "./ui/InfoAlert";
+import MobileDesktop from "./MobileDesktop";
+import MobileLockScreen from "./MobileLockScreen";
+import MobileLoadingPage from "./MobileLoadingPage";
 
 // Device detection
-import { isMobile, isTablet, isDesktop } from "react-device-detect";
+import { isDesktop } from "react-device-detect";
 
 // ASSETS
-import mobile_page from "../assets/mobile_page.jpg";
 import icon_home from "../assets/home-icon.png";
 import icon_about from "../assets/about-icon.png";
 import icon_portfolio from "../assets/portfolio-icon.png";
 import icon_contact from "../assets/contact-icon.png";
 import icon_games from "../assets/icon_games.png";
+import icon_videos from "../assets/video-icon.svg";
 import icon_bin from "../assets/bin.png";
 import bg_image from "../assets/logo_animated.gif";
 
@@ -36,7 +39,7 @@ function Myapp() {
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, isDesktop ? 1500 : 4000);
 
     window.logOut = () => setIsLoggedIn(false);
 
@@ -50,12 +53,13 @@ function Myapp() {
     portfolio: { title: "Portfolio", img: icon_portfolio, size: "w-[700px] h-[590px]" },
     contact: { title: "Say hi !", img: icon_contact, size: "w-[600px] h-[570px]" },
     games: { title: "Games", img: icon_games, size: "w-[700px] h-[640px]" },
+    videos: { title: "My Videos", img: icon_videos, size: "w-[820px] h-[610px]" },
     bin: { title: "Recycle bin", img: icon_bin, size: "w-[600px] h-[510px]" }
   };
 
   const getTitleJSX = (id) => (
-    <span className="flex items-center text-sm sm:text-base md:text-lg">
-      <img src={iconConfig[id].img} className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 mr-2 sm:mr-3" alt="" /> {windows[id].title}
+    <span className="flex items-center text-sm sm:text-base">
+      <img src={iconConfig[id].img} className="mr-2 h-5 w-5" alt="" /> {windows[id].title}
     </span>
   );
 
@@ -112,8 +116,8 @@ function Myapp() {
                 {Object.values(windows).map(win => {
                   if (!win.isOpen) return null;
 
-                  const initialX = win.id === 'home' ? 250 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 300 : win.id === 'contact' ? 320 : win.id === 'games' ? 350 : 600;
-                  const initialY = win.id === 'home' ? 100 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 150 : win.id === 'contact' ? 110 : win.id === 'games' ? 130 : 100;
+                  const initialX = win.id === 'home' ? 250 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 300 : win.id === 'contact' ? 320 : win.id === 'games' ? 350 : win.id === 'videos' ? 260 : 600;
+                  const initialY = win.id === 'home' ? 100 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 150 : win.id === 'contact' ? 110 : win.id === 'games' ? 130 : win.id === 'videos' ? 90 : 100;
 
                   return (
                     <Onglet
@@ -140,10 +144,12 @@ function Myapp() {
             )}
           </AnimatePresence>
         </div>
+      ) : isLoading ? (
+        <MobileLoadingPage />
+      ) : !isLoggedIn ? (
+        <MobileLockScreen onLogin={() => setIsLoggedIn(true)} />
       ) : (
-        <div className="w-full bg-blue-600">
-          <img src={mobile_page} alt="" />
-        </div>
+        <MobileDesktop onLogout={() => setIsLoggedIn(false)} />
       )}
     </div>
   );

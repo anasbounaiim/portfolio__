@@ -53,7 +53,7 @@ const About = () => {
           </div>
 
           {/* Scrollable Chat Area */}
-          <div className="flex-1 overflow-y-auto px-4 py-2 scroll-smooth bg-white">
+          <div className="flex-1 overflow-y-auto px-2 py-2 scroll-smooth bg-white sm:px-4">
             <p className="flex justify-center my-4 font-normal text-[11px] text-gray-400 tracking-wider">
               - DAY IN LIFE -
             </p>
@@ -64,14 +64,14 @@ const About = () => {
               <div className="rounded-full w-8 h-8 mr-2 bg-gray-200 flex-shrink-0 border border-gray-100">
                 <img src="https://ui-avatars.com/api/?name=K+7&rounded=true&size=32&color=FFFFFF&background=AAAAAA" alt="" />
               </div>
-              <div className="bg-blue-600 max-w-[70%] rounded-2xl rounded-bl-none px-4 py-2.5 text-[13px] leading-relaxed shadow-sm">
+              <div className="bg-blue-600 max-w-[82%] rounded-2xl rounded-bl-none px-3 py-2.5 text-[13px] leading-relaxed shadow-sm sm:max-w-[70%] sm:px-4">
                 Hey Anas! 👋 I was reading your CV and saw your journey from support to full-stack development. Can we talk about it? 🧐
               </div>
             </div>
 
             {/* ME */}
             <div className="my-4 flex flex-row items-end justify-end animate__animated animate__fadeInRight">
-              <div className="bg-gray-100 text-gray-800 max-w-[70%] rounded-2xl rounded-br-none px-4 py-2.5 text-[13px] leading-relaxed shadow-sm border border-gray-200">
+              <div className="bg-gray-100 text-gray-800 max-w-[82%] rounded-2xl rounded-br-none px-3 py-2.5 text-[13px] leading-relaxed shadow-sm border border-gray-200 sm:max-w-[70%] sm:px-4">
                 Sure! 😊 I started with a <strong>Scientific Baccalaureate – Physics & Chemistry</strong> in 2019 at Moulay Teyeb El Alaoui in Salé. Then I completed a <strong>Diploma of Specialized Technician in Software & Web Development</strong> at <strong>ISTA NTIC</strong> from 2020 to 2022, where I built my foundations in programming and web technologies. 🎓
               </div>
               <div className="rounded-full w-8 h-8 ml-2 bg-red-100 flex-shrink-0 border border-red-200">
@@ -195,17 +195,17 @@ const About = () => {
           </div>
 
           {/* Sticky Input Bar */}
-          <div className="sticky bottom-0 w-full bg-gray-50/95 backdrop-blur-sm border-t border-gray-200 p-3 flex items-center z-40 flex-shrink-0">
+          <div className="sticky bottom-0 w-full bg-gray-50/95 backdrop-blur-sm border-t border-gray-200 p-2 sm:p-3 flex items-center z-40 flex-shrink-0">
             <div className="relative flex-1">
               <input
                 type="text"
                 placeholder="Type your message here..."
-                className="w-full bg-white border border-gray-200 rounded-full px-5 py-2.5 text-[13px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all shadow-inner"
+                className="w-full bg-white border border-gray-200 rounded-full px-4 sm:px-5 py-2.5 text-[13px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all shadow-inner"
                 disabled
               />
             </div>
             <button
-              className="ml-3 bg-blue-600 text-white w-9 h-9 flex items-center justify-center rounded-full font-semibold cursor-not-allowed shadow-md hover:bg-blue-700 transition-all opacity-90"
+              className="ml-2 sm:ml-3 bg-blue-600 text-white w-9 h-9 flex shrink-0 items-center justify-center rounded-full font-semibold cursor-not-allowed shadow-md hover:bg-blue-700 transition-all opacity-90"
               disabled
             >
               <IoSend size={16} />

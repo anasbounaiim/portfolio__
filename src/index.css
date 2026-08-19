@@ -19,6 +19,17 @@ body {
   cursor: default;
 }
 
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .cursor-grab {
   cursor: grab !important;
 }
@@ -125,4 +136,65 @@ body {
 
 .flicker {
   animation: flicker 0.1s infinite;
+}
+
+.mpc-button {
+  display: inline-flex;
+  height: 25px;
+  width: 25px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b7b7b7;
+  border-radius: 2px;
+  color: #333;
+  background: linear-gradient(#fff, #e8e8e8);
+  box-shadow: inset 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.mpc-button:hover { background: #f3f3f3; border-color: #8c8c8c; }
+.mpc-button:active { background: #ddd; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.18); }
+
+.mpc-control {
+  display: inline-flex;
+  height: 25px;
+  min-width: 22px;
+  align-items: center;
+  justify-content: center;
+  color: #3d3d3d;
+}
+
+.mpc-control:hover { color: #000; transform: translateY(-1px); }
+
+.mpc-range,
+.mpc-volume {
+  height: 4px;
+  cursor: pointer;
+  appearance: none;
+  border: 1px solid #111;
+  background: #cfd3d5;
+  box-shadow: inset 0 1px 2px #555;
+}
+
+.mpc-volume {
+  background: linear-gradient(90deg, #72d66e 0%, #e6d858 60%, #e75858 100%);
+}
+
+.mpc-range::-webkit-slider-thumb,
+.mpc-volume::-webkit-slider-thumb {
+  width: 7px;
+  height: 17px;
+  appearance: none;
+  border: 1px solid #555;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #eee, #aaa);
+  box-shadow: 0 1px 2px #111;
+}
+
+.mpc-range::-moz-range-thumb,
+.mpc-volume::-moz-range-thumb {
+  width: 7px;
+  height: 17px;
+  border: 1px solid #555;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #eee, #aaa);
 }

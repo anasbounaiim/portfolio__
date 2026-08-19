@@ -6,6 +6,7 @@ import icon_portfolio from "../../assets/portfolio-icon.png";
 import icon_contact from "../../assets/contact-icon.png";
 import icon_games from "../../assets/icon_games.png";
 import icon_bin from "../../assets/bin.png";
+import icon_videos from "../../assets/video-icon.svg";
 
 
 const Icon = ({ bgColor, text, handleClick }) => {
@@ -32,6 +33,9 @@ const Icon = ({ bgColor, text, handleClick }) => {
           )}
           {text === "Games" && (
             <img src={icon_games} className="w-18 h-18" alt="" />
+          )}
+          {text === "My Videos" && (
+            <img src={icon_videos} className="w-18 h-18" alt="" />
           )}
           {text === "Recycle bin" && (
             <img src={icon_bin} className="w-18 h-18" alt="" />

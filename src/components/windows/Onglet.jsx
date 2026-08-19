@@ -9,6 +9,7 @@ import About from "../../features/About";
 import Porfolio from "../../features/Portfolio";
 import Contact from "../../features/Contact";
 import Games from "../../features/Games";
+import Videos from "../../features/Videos";
 
 import "animate.css";
 
@@ -166,45 +167,45 @@ const Onglet = ({
     >
       {/* Header - Drag Handle */}
       <div
-        className={`w-full bg-blue-600 select-none ${isMaximized ? 'cursor-default' : 'cursor-move'} py-1 flex justify-between items-center text-white text-xl font-medium shadow-md pr-1`}
+        className={`w-full bg-blue-600 select-none ${isMaximized ? 'cursor-default' : 'cursor-move'} flex h-8 items-center px-2 text-white text-base font-medium shadow-md`}
         onDoubleClick={handleMaximize}
       >
-        <span className="ml-4 truncate flex-1 mr-2">{title}</span>
-        <div className="flex items-center space-x-0.5" onPointerDown={e => e.stopPropagation()}>
+        <span className="min-w-0 flex-1 truncate">{title}</span>
+        <div className="flex shrink-0 items-center gap-1" onPointerDown={e => e.stopPropagation()}>
           {/* Minimize Button */}
           <button
-            className="cursor-pointer rounded-md p-1.5 hover:bg-white/20 transition-colors"
+            className="flex h-5 w-8 cursor-pointer items-center justify-center rounded-[3px] border border-white/25 bg-white/15 text-white shadow-sm transition-all hover:bg-white/25 hover:shadow-md active:scale-95"
             onClick={(e) => {
               e.stopPropagation();
               handleMinimize();
             }}
             title="Minimize"
           >
-            <MdOutlineMinimize className="text-xl" />
+            <MdOutlineMinimize className="text-base drop-shadow-sm" />
           </button>
 
           {/* Maximize/Restore Button */}
           <button
-            className="cursor-pointer rounded-md p-1.5 hover:bg-white/20 transition-colors"
+            className="flex h-5 w-8 cursor-pointer items-center justify-center rounded-[3px] border border-white/25 bg-white/15 text-white shadow-sm transition-all hover:bg-white/25 hover:shadow-md active:scale-95"
             onClick={(e) => {
               e.stopPropagation();
               handleMaximize();
             }}
             title={isMaximized ? "Restore" : "Maximize"}
           >
-            {isMaximized ? <MdOutlineFullscreenExit className="text-xl" /> : <MdOutlineFullscreen className="text-xl" />}
+            {isMaximized ? <MdOutlineFullscreenExit className="text-base drop-shadow-sm" /> : <MdOutlineFullscreen className="text-base drop-shadow-sm" />}
           </button>
 
           {/* Close Button */}
           <button
-            className="cursor-pointer rounded-md p-1.5 bg-red-500 hover:bg-red-600 transition-colors"
+            className="flex h-5 w-8 cursor-pointer items-center justify-center rounded-[3px] border border-red-600 bg-red-500 text-white shadow-sm transition-all hover:bg-red-400 hover:shadow-md active:scale-95"
             onClick={(e) => {
               e.stopPropagation();
               handleClose();
             }}
             title="Close"
           >
-            <MdOutlineClose className="text-xl font-bold" />
+            <MdOutlineClose className="text-base font-bold drop-shadow-sm" />
           </button>
         </div>
       </div>
@@ -216,12 +217,13 @@ const Onglet = ({
         </div>
       </div>
 
-      <div className="w-full h-[calc(100%-5rem)] bg-white overflow-y-auto scroll-smooth">
+      <div className="h-[calc(100%-4.5rem)] w-full overflow-y-auto scroll-smooth bg-white">
         {content === "home" && <div className="p-4"><Home /></div>}
         {content === "about" && <div className="p-4"><About /></div>}
         {content === "portfolio" && <div className="p-4"><Porfolio /></div>}
         {content === "contact" && <div className="p-4"><Contact /></div>}
         {content === "games" && <div className="h-full bg-white"><Games /></div>}
+        {content === "videos" && <div className="h-full bg-[#111827]"><Videos /></div>}
         {content === "bin" && (
           <div className="flex justify-center items-center h-full">
             <span className="mb-9 text-lg font-medium text-zinc-400 italic">
