@@ -57,8 +57,8 @@ const Whether = ({ mobile = false }) => {
   }, []);
 
   return (
-    <div className={mobile ? "relative flex aspect-square h-auto w-full flex-col items-center rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
-      <div className="text-white w-[100%] h-[74%]">
+    <div className={mobile ? "relative flex aspect-square h-auto w-full min-w-0 flex-col items-center overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
+      <div className="min-h-0 w-full flex-1 text-white">
         {typeof weather.main !== "undefined" ? (
           <div className="my-2 mt-3 text-xs font-semibold flex flex-col items-center animate__animated animate__fadeIn">
             <img className="w-12 h-12" src={weatherIcon} alt="" />
@@ -77,9 +77,9 @@ const Whether = ({ mobile = false }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-row justify-center mt-3">
+      <div className={`${mobile ? "mb-[8%] w-[88%]" : "mt-3"} flex min-w-0 flex-row justify-center`}>
         <input
-          className="text-black w-32 text-xs px-2 py-0 rounded-l-md capitalize"
+          className={`${mobile ? "min-w-0 flex-1" : "w-32"} rounded-l-md px-2 py-0 text-xs capitalize text-black`}
           type="text"
           placeholder="Enter city/town..."
           onChange={(e) => setSearch(e.target.value)}

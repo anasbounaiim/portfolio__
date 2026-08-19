@@ -80,20 +80,20 @@ export default function MobileDesktop({ onLogout }) {
       </div>
 
       <div className="relative z-10 flex h-[calc(100dvh-1.75rem)] flex-col">
-        <div className="px-5 pb-2 pt-6">
+        <div className="mobile-welcome px-5 pb-2 pt-[clamp(0.75rem,3vh,1.5rem)]">
           <p className="text-2xl font-semibold">Welcome, Visitor</p>
           <p className="text-sm text-white/70">{now.toLocaleDateString([], { weekday: "long", month: "long", day: "numeric" })}</p>
           <p lang="ar" dir="rtl" className="mt-0.5 w-fit text-sm text-white/60">{new Intl.DateTimeFormat("ar-MA-u-ca-islamic", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(now)}</p>
         </div>
 
-        <div className="grid flex-1 grid-flow-row-dense content-start grid-cols-4 gap-x-1 gap-y-6 overflow-y-auto px-3 py-5">
+        <div className="mobile-app-grid grid min-h-0 flex-1 grid-flow-row-dense content-start grid-cols-4 gap-x-1 overflow-y-auto overscroll-contain px-3 py-5 [gap-block:var(--mobile-grid-gap)]">
           <div className="col-span-2 col-start-1 row-span-2">
             <Weather mobile />
           </div>
           {apps.map((app) => (
             <button key={app.id} onClick={() => setActiveApp(app.id)} className="flex min-w-0 flex-col items-center gap-1.5 active:scale-95">
-              <span className="flex h-[72px] w-[72px] max-w-full items-center justify-center">
-                <img src={app.icon} alt="" className="max-h-16 max-w-16 object-contain drop-shadow-lg" />
+              <span className="flex max-w-full items-center justify-center [height:var(--mobile-icon-cell)] [width:var(--mobile-icon-cell)]">
+                <img src={app.icon} alt="" className="object-contain drop-shadow-lg [max-height:var(--mobile-icon)] [max-width:var(--mobile-icon)]" />
               </span>
               <span className="w-full truncate text-center text-xs font-medium drop-shadow">{app.label}</span>
             </button>
@@ -107,7 +107,7 @@ export default function MobileDesktop({ onLogout }) {
                 className="flex min-w-0 flex-col items-center gap-1.5 active:scale-95"
                 aria-label={`Open ${social.label}`}
               >
-                <span className={`flex h-16 w-16 max-w-full items-center justify-center rounded-2xl text-4xl text-white shadow-lg ${social.color}`}>
+                <span className={`flex max-w-full items-center justify-center rounded-[22%] text-[clamp(1.8rem,9vw,2.25rem)] text-white shadow-lg [height:var(--mobile-icon)] [width:var(--mobile-icon)] ${social.color}`}>
                   <SocialIcon />
                 </span>
                 <span className="w-full truncate text-center text-xs font-medium drop-shadow">{social.label}</span>
@@ -116,9 +116,9 @@ export default function MobileDesktop({ onLogout }) {
           })}
         </div>
 
-        <div className="mx-4 mb-[max(12px,env(safe-area-inset-bottom))] flex h-20 items-center justify-around rounded-[24px] border border-white/45 bg-white/30 px-4 shadow-[0_10px_35px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.55)] backdrop-blur-2xl backdrop-saturate-150">
+        <div className="mobile-dock mx-4 mb-[max(12px,env(safe-area-inset-bottom))] flex h-[clamp(4.25rem,10vh,5rem)] shrink-0 items-center justify-around rounded-[24px] border border-white/45 bg-white/30 px-[clamp(0.5rem,4vw,1rem)] shadow-[0_10px_35px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.55)] backdrop-blur-2xl backdrop-saturate-150">
           {apps.slice(0, 4).map((app) => (
-            <button key={app.id} aria-label={app.label} onClick={() => setActiveApp(app.id)} className="h-14 w-14 p-0.5 active:scale-90">
+            <button key={app.id} aria-label={app.label} onClick={() => setActiveApp(app.id)} className="h-[clamp(2.8rem,13vw,3.5rem)] w-[clamp(2.8rem,13vw,3.5rem)] p-0.5 active:scale-90">
               <img src={app.icon} alt="" className="h-full w-full object-contain" />
             </button>
           ))}

@@ -15,7 +15,7 @@
 body {
   font-family: "SFPROD";
   background-color: #070707;
-  height: 90vh;
+  height: 100%;
   cursor: default;
 }
 
@@ -24,6 +24,29 @@ html, body, #root {
   min-height: 100%;
   margin: 0;
   overscroll-behavior: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.mobile-os {
+  --mobile-icon: clamp(3.1rem, 16vw, 4rem);
+  --mobile-icon-cell: clamp(3.4rem, 18vw, 4.5rem);
+  --mobile-grid-gap: clamp(0.75rem, 2.4vh, 1.5rem);
+}
+
+@media (max-height: 700px) {
+  .mobile-os {
+    --mobile-icon: 3rem;
+    --mobile-icon-cell: 3.25rem;
+    --mobile-grid-gap: 0.65rem;
+  }
+
+  .mobile-welcome { padding-top: 0.75rem; }
+  .mobile-app-grid { padding-top: 0.65rem; padding-bottom: 0.65rem; }
+  .mobile-dock { height: 4.25rem; }
 }
 
 button {
