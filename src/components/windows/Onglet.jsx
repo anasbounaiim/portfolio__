@@ -231,6 +231,25 @@ const Onglet = ({
             </span>
           </div>
         )}
+        {content === "camera" && (
+          <div className="relative flex h-full min-h-[360px] flex-col overflow-hidden bg-black text-white">
+            <div className="flex h-12 shrink-0 items-center justify-between px-6 text-xs font-semibold tracking-widest text-white/70">
+              <span>FLASH OFF</span>
+              <span>HDR</span>
+            </div>
+            <div className="relative flex min-h-0 flex-1 items-center justify-center bg-gradient-to-b from-zinc-950 via-zinc-900 to-black">
+              <div className="pointer-events-none absolute inset-0 grid grid-cols-3 grid-rows-3 opacity-10">
+                {Array.from({ length: 9 }).map((_, index) => <span key={index} className="border border-white" />)}
+              </div>
+              <p className="relative px-6 text-center text-4xl font-light tracking-wide drop-shadow-lg">You look beautiful 🤪</p>
+            </div>
+            <div className="flex h-24 shrink-0 items-center justify-center bg-black">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-white">
+                <span className="h-12 w-12 rounded-full bg-white" />
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -7,6 +7,7 @@ import icon_contact from "../../assets/contact-icon.png";
 import icon_games from "../../assets/icon_games.png";
 import icon_bin from "../../assets/bin.png";
 import icon_videos from "../../assets/video-icon.svg";
+import icon_camera from "../../assets/camera-icon.svg";
 
 
 const Icon = ({ bgColor, text, handleClick }) => {
@@ -39,6 +40,9 @@ const Icon = ({ bgColor, text, handleClick }) => {
           )}
           {text === "Recycle bin" && (
             <img src={icon_bin} className="w-18 h-18" alt="" />
+          )}
+          {text === "Camera" && (
+            <img src={icon_camera} className="h-[50px] w-[50px]" alt="" />
           )}
         </div>
         <span

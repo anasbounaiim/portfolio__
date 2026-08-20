@@ -10,7 +10,8 @@ export const WindowProvider = ({ children }) => {
     contact: { id: 'contact', title: 'Contact', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 4 },
     games: { id: 'games', title: 'Games', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 5 },
     videos: { id: 'videos', title: 'My Videos', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 6 },
-    bin: { id: 'bin', title: 'Recycle bin', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 7 }
+    bin: { id: 'bin', title: 'Recycle bin', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 7 },
+    camera: { id: 'camera', title: 'Camera', isOpen: false, isMinimized: false, isMaximized: false, zIndex: 8 }
   });
 
   const [tabPositions, setTabPositions] = useState({});

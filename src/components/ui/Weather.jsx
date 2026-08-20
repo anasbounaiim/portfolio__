@@ -57,7 +57,7 @@ const Whether = ({ mobile = false }) => {
   }, []);
 
   return (
-    <div className={mobile ? "relative flex aspect-square h-auto w-[90%] min-w-0 flex-col items-center overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-44 w-44 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
+    <div className={mobile ? "relative flex aspect-square h-auto w-[90%] min-w-0 flex-col items-center overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-sky-700 to-sky-400 shadow-lg" : `absolute top-[16rem] right-1 mr-6 mt-2 flex h-48 w-48 flex-col items-center rounded-lg ${bgColor} shadow-lg animate__animated animate__fadeInRight`}>
       <div className="min-h-0 w-full flex-1 text-white">
         {typeof weather.main !== "undefined" ? (
           <div className="my-2 mt-3 text-xs font-semibold flex flex-col items-center animate__animated animate__fadeIn">
@@ -77,7 +77,7 @@ const Whether = ({ mobile = false }) => {
           </div>
         )}
       </div>
-      <div className={`${mobile ? "mb-[8%] w-[88%]" : "mt-3"} flex min-w-0 flex-row justify-center`}>
+      <div className={`${mobile ? "mb-[8%] w-[88%]" : "mb-3 mt-3"} flex min-w-0 flex-row justify-center`}>
         <input
           className={`${mobile ? "min-w-0 flex-1" : "w-32"} rounded-l-md px-2 py-0 text-xs capitalize text-black`}
           type="text"

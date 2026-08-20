@@ -29,6 +29,7 @@ import icon_contact from "../assets/contact-icon.png";
 import icon_games from "../assets/icon_games.png";
 import icon_videos from "../assets/video-icon.svg";
 import icon_bin from "../assets/bin.png";
+import icon_camera from "../assets/camera-icon.svg";
 import bg_image from "../assets/logo_animated.gif";
 
 function Myapp() {
@@ -54,7 +55,8 @@ function Myapp() {
     contact: { title: "Say hi !", img: icon_contact, size: "w-[600px] h-[570px]" },
     games: { title: "Games", img: icon_games, size: "w-[700px] h-[640px]" },
     videos: { title: "My Videos", img: icon_videos, size: "w-[820px] h-[610px]" },
-    bin: { title: "Recycle bin", img: icon_bin, size: "w-[600px] h-[510px]" }
+    bin: { title: "Recycle bin", img: icon_bin, size: "w-[600px] h-[510px]" },
+    camera: { title: "Camera", img: icon_camera, size: "w-[600px] h-[510px]" }
   };
 
   const getTitleJSX = (id) => (
@@ -116,8 +118,8 @@ function Myapp() {
                 {Object.values(windows).map(win => {
                   if (!win.isOpen) return null;
 
-                  const initialX = win.id === 'home' ? 250 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 300 : win.id === 'contact' ? 320 : win.id === 'games' ? 350 : win.id === 'videos' ? 260 : 600;
-                  const initialY = win.id === 'home' ? 100 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 150 : win.id === 'contact' ? 110 : win.id === 'games' ? 130 : win.id === 'videos' ? 90 : 100;
+                  const initialX = win.id === 'home' ? 250 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 300 : win.id === 'contact' ? 320 : win.id === 'games' ? 350 : win.id === 'videos' ? 260 : win.id === 'camera' ? 420 : 600;
+                  const initialY = win.id === 'home' ? 100 : win.id === 'about' ? 200 : win.id === 'portfolio' ? 150 : win.id === 'contact' ? 110 : win.id === 'games' ? 130 : win.id === 'videos' ? 90 : win.id === 'camera' ? 120 : 100;
 
                   return (
                     <Onglet
